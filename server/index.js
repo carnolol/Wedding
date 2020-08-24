@@ -26,4 +26,7 @@ massive({
 })
 
 //* USER ENDPOINTS
-app.get()
+app.get('/user/me', userCtrl.getLoggedInUser)
+app.post('/user/login', userCtrl.login)
+app.post('/user/register', userCtrl.register)
+app.delete('/user/logout', userCtrl.logout)

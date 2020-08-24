@@ -6,7 +6,7 @@ const moabPictures = [
 
 ]
 
-const random = Math.floor(math.random() * moabPictures.length)
+const random = Math.floor(Math.random() * moabPictures.length)
 const randomMoabPicture = moabPictures[random]
 
 module.exports = {
