@@ -74,6 +74,8 @@ function Header(props) {
                         onClick={() => scrollToTop()}>Venue Locations</li>
                     <li className='mobile-nav-item'
                         onClick={() => scrollToTop()}>RSVP</li>
+                    <li className='mobile-nav-item'
+                        >Our Vows</li>
                 </nav>
 
             </nav>
