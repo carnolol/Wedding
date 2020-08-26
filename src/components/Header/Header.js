@@ -16,6 +16,8 @@ function Header(props) {
         window.addEventListener('scroll', handleAnimations)
     }, [])
 
+    const php = props.history.push
+
     const handleAnimations = () => {
         //TODO: built out scrolling logic here when sizes of components is finished.
     }
@@ -50,7 +52,7 @@ function Header(props) {
     return (
         <div className='master-header-div'>
 
-            <h1>The Chadwick's</h1>
+            <h1 onClick={() => php('/')}>The Chadwick's</h1>
 
             <nav className='navbar'>
 
@@ -75,7 +77,7 @@ function Header(props) {
                     <li className='mobile-nav-item'
                         onClick={() => scrollToTop()}>RSVP</li>
                     <li className='mobile-nav-item'
-                        >Our Vows</li>
+                        onClick={() => php('/vows')}>Our Vows</li>
                 </nav>
 
             </nav>
