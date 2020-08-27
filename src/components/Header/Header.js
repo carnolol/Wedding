@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import menu from '../icons/60-hamburger-white copy.png'
 import { connect } from 'react-redux'
 import {withRouter} from 'react-router-dom'
 
@@ -57,19 +58,25 @@ function Header(props) {
             <nav className='navbar'>
 
                 <ul className='large-screen-nav-list'>
+
                     <li className={`nav-item ${home ? 'current-nav-location' : null}`}
                         onClick={() => scrollToTop()}>Home</li>
                     <li className={`nav-item ${locations ? 'current-nav-location' : null}`}
                         onClick={() => scrollToLocations()}>Venue Locations</li>
                     <li className={`nav-item ${RSVP ? 'current-nav-location' : null}`}
                         onClick={() => scrollToRSVP()}>RSVP</li>
-                    <li className='nav-item'>Our Vows</li>
+                    <li className='nav-item'
+                        onClick={() => php('/vows')}>Our Vows</li>
+                        
                 </ul>
 
                 <img className='hamburger'
-                    alt='menu icon'/>
+                    alt='menu icon'
+                    src={menu}
+                    onClick={() => setMobileMenu(!mobileMenu)}/>
 
                 <nav className={`mobile-nav-list-closed ${mobileMenu ? `mobile-nav-list-open` : null}`}>
+
                     <li className='mobile-nav-item'
                         onClick={() => scrollToTop()}>Home</li>
                     <li className='mobile-nav-item'
@@ -78,6 +85,7 @@ function Header(props) {
                         onClick={() => scrollToTop()}>RSVP</li>
                     <li className='mobile-nav-item'
                         onClick={() => php('/vows')}>Our Vows</li>
+
                 </nav>
 
             </nav>

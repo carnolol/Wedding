@@ -7,9 +7,16 @@
     justify-content: space-between;
 }
 
+.master-header-div > h1{
+    font-size: 140%;
+    color: white;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 550;
+    text-shadow: 2px 2px 2px black;
+}
+
 .navbar{
     height: 100%;
-    width: 50%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -26,6 +33,35 @@
 
 .nav-item{
     cursor: pointer;
+    text-decoration: none
+}
+
+.mobile-nav-item{
+    text-decoration: none;
+    color: white;
+    font-size: 150%;
+    text-shadow: 2px 2px 4px black;
+    list-style: none;
+}
+
+.mobile-nav-list-closed{
+    position: absolute;
+    top: 45px;
+    right: 0;
+    height: 0;
+    width: 250px;
+    box-shadow: -2px 2px 5px #279185;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: all .25s ease-in-out;
+    overflow-y: hidden;
+    background-image: linear-gradient(to left top, #e9c46a, #ebb663, #eda85e, #ed9a5b, #ec8c5b, #ec8c5b, #ec8c5b, #ec8c5b, #ed9a5b, #eda85e, #ebb663, #e9c46a);
+}
+
+.mobile-nav-list-open{
+    height: 50vh;
 }
 
 @media(max-width: 800px){

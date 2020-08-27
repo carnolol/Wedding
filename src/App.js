@@ -15,7 +15,8 @@ function App(props) {
   return (
     <div className='master-app-div'>
       <Header/>
-      {plp === '/' ? <Slideshow/> && <Map/> : routes}
+      {plp === '/' ? (<> <Slideshow/> <Map/> </>): routes}
+      {/* {plp === '/' ? <Map/> : null} */}
       <Footer/>
       {/* {routes} */}
     </div>
