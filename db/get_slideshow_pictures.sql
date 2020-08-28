@@ -1,0 +1,1 @@
+select * from slideshow_pictures

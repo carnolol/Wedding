@@ -31,6 +31,13 @@
     justify-content: space-evenly;
 }
 
+.hamburger{
+    height: 35px;
+    margin-right: 15px;
+    display: none;
+    cursor: pointer;
+}
+
 .nav-item{
     cursor: pointer;
     text-decoration: none

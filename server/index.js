@@ -6,6 +6,7 @@ const app = express()
 app.use(express.json())
 const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env
 const userCtrl = require('./userController')
+const slideShowCtrl = require('./slideshowController')
 
 app.use(session({
     resave: false, 
@@ -30,3 +31,7 @@ app.get('/user/me', userCtrl.getLoggedInUser)
 app.post('/user/login', userCtrl.login)
 app.post('/user/register', userCtrl.register)
 app.delete('/user/logout', userCtrl.logout)
+
+//* SLIDESHOW ENDPOINTS
+
+app.get('/wedding/pictures' , slideShowCtrl.getSlideshowPictures)
