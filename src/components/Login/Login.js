@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import './Login.css'
+import family from '../photos/Family.jpg'
+import TextFiend from '@material-ui/core/TextField'
 
-const close = 'https://cdn.onlinewebfonts.com/svg/img_365840.png'
+const close = 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/VisualEditor_-_Icon_-_Close_-_white.svg/1200px-VisualEditor_-_Icon_-_Close_-_white.svg.png'
 
 function Login(props) {
 
@@ -21,12 +23,29 @@ function Login(props) {
 
             <div className='login-form-container'>
 
-                <img className='close-img' 
+                <img className='close-img'
                     alt='X'
                     src={close}
-                    onClick={() => props.handleOpen()}/>
+                    onClick={() => props.handleOpen()} />
 
-                <button onClick={() => props.handleOpen()}>XXXXXX</button>
+                <div className='family-pic-container'>
+                    <img className='family-pic'
+                        alt='The Chadwicks'
+                        src={family} />
+                    <h1> The Chadwick's</h1>
+                </div>
+
+                <div className='first-and-last-name-inputs'>
+                    <TextFiend
+                        label='First Name *'
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)}/>
+                    <TextFiend 
+                        label='Last Name *'
+                        value={lastName}
+                        onChange={(e) => setLastName(e.target.value)}/>
+                </div>
+
             </div>
 
         </div>

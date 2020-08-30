@@ -11,14 +11,17 @@
 
 .login-form-container{
     position: relative;
-    height: 450px;
-    width: 350px;
+    height: 75%;
+    width: 90%;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .close-img{
     cursor: pointer;
-    background-color:#E0E0E0;
+    background-color:#959595;
     border-radius: 50%;
     padding: 5px;
     position: absolute;
@@ -26,8 +29,43 @@
     right: 20px;
     height: 40px;
     width: 40px;
+    z-index: 5;
 }
 
 .close-img:hover{
-    background-color: #999999;
+    transition: all .3s ease-in-out;
+    height: 45px;
+    width: 45px;
+}
+
+.family-pic-container{
+    position: relative;
+}
+
+.family-pic-container > h1 {
+    position: absolute;
+    bottom: -25px;
+    right: 28%;
+    color: black;
+    background-color: #279185;
+    text-shadow: 1px 1px 1px white;
+    padding: 10px;
+    font-size: 170%;
+    font-family: 'Dancing Script', cursive;
+}
+
+.family-pic{
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    object-position: 0 -50px;
+}
+
+.first-and-last-name-inputs{
+    margin-top: 50px;
+    display: flex;
+    width: 95%;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
 }
