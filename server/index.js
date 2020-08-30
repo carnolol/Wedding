@@ -6,6 +6,7 @@ const app = express()
 app.use(express.json())
 const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env
 const userCtrl = require('./userController')
+const commentCtrl = require('./commentsController')
 const slideShowCtrl = require('./slideshowController')
 
 app.use(session({
@@ -35,3 +36,8 @@ app.delete('/user/logout', userCtrl.logout)
 //* SLIDESHOW ENDPOINTS
 
 app.get('/wedding/pictures' , slideShowCtrl.getSlideshowPictures)
+
+//* COMMENTS ENDPOINTS
+
+app.get('/wedding/comments', commentCtrl.addComment)
+//TODO: add DB file to add comments (work on MVP before doing this, and create Table for comments.)
