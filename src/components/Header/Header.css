@@ -1,9 +1,10 @@
 .master-header-div{
     height: 45px;
     width: 100vw;
-    background-color: #E9795D;
+    background-color: #E45C3A;
     display: flex;
     align-items: center;
+    position: relative;
     justify-content: space-between;
 }
 

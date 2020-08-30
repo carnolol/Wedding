@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import menu from '../icons/60-hamburger-white copy.png'
+import Login from '../Login/Login'
 import { connect } from 'react-redux'
 import {withRouter} from 'react-router-dom'
 
@@ -10,6 +11,7 @@ function Header(props) {
 
     const [mobileMenu, setMobileMenu] = useState(false)
     const [home , setHome] = useState(true)
+    const [login, setLogin] = useState(false)
     const [locations, setLocations] = useState(false)
     const [RSVP, setRSVP] = useState(false)
 
@@ -85,11 +87,13 @@ function Header(props) {
                         onClick={() => scrollToTop()}>RSVP</li>
                     <li className='mobile-nav-item'
                         onClick={() => php('/vows')}>Our Vows</li>
-
+                    <li className='mobile-nav-item'
+                        onClick={() => setLogin(!login)}>Login</li>
+                        
                 </nav>
 
             </nav>
-
+            {login ? <Login open={login}/> : null}
         </div>
     )
 }
