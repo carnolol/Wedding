@@ -12,6 +12,7 @@ function Login(props) {
     const [password2, setPassword2] = useState('')
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
+    const [loggingIn, setLoggingIn] = useState(true)
     const [email, setEmail] = useState('')
 
     useEffect(() => {
@@ -36,17 +37,30 @@ function Login(props) {
                 </div>
 
                 <div className='first-and-last-name-inputs'>
-                    <TextFiend
-                        label='First Name *'
-                        value={firstName}
-                        onChange={(e) => setFirstName(e.target.value)}/>
-                    <TextFiend 
-                        label='Last Name *'
-                        value={lastName}
-                        onChange={(e) => setLastName(e.target.value)}/>
+                    {loggingIn ? (
+                        <TextFiend
+                            label='Email'
+                            value={email}
+                            required={true}
+                            onChange={e => setEmail(e.target.value)} />
+                    ) : (
+                        <>
+                        <TextFiend
+                            label='First Name'
+                            value={firstName}
+                            required={true}
+                            onChange={(e) => setFirstName(e.target.value)} />
+                        <TextFiend
+                            label='Last Name'
+                            value={lastName}
+                            required={true}
+                            onChange={(e) => setLastName(e.target.value)} /> </>)}
                 </div>
-
-            </div>
+                <div>
+                    <p>Don't have an account? </p>
+                    <h3>REGISTER HERE</h3>
+                </div>          
+            </div> 
 
         </div>
     )
