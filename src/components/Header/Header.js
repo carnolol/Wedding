@@ -52,6 +52,11 @@ function Header(props) {
         setMobileMenu(false)
     }
 
+    const handleOpenLogin = () =>{
+        setLogin(!login)
+        setMobileMenu(false)
+    }
+
     return (
         <div className='master-header-div'>
 
@@ -88,12 +93,12 @@ function Header(props) {
                     <li className='mobile-nav-item'
                         onClick={() => php('/vows')}>Our Vows</li>
                     <li className='mobile-nav-item'
-                        onClick={() => setLogin(!login)}>Login</li>
-                        
+                        onClick={() => handleOpenLogin()}>Login</li>
+
                 </nav>
 
             </nav>
-            {login ? <Login open={login}/> : null}
+            {login ? <Login open={login} handleOpen={handleOpenLogin}/> : null}
         </div>
     )
 }

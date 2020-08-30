@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import './Login.css'
 
+const close = 'https://cdn.onlinewebfonts.com/svg/img_365840.png'
+
 function Login(props) {
 
     const [password1, setPassword1] = useState('')
@@ -13,13 +15,20 @@ function Login(props) {
     useEffect(() => {
 
     }, [])
-
+    //TODO: Need to add input boxes using material UI, need to update redux correctly with users info.
     return (
         <div className='master-login-div'>
-            Login.js
-            <div className='child'>
 
+            <div className='login-form-container'>
+
+                <img className='close-img' 
+                    alt='X'
+                    src={close}
+                    onClick={() => props.handleOpen()}/>
+
+                <button onClick={() => props.handleOpen()}>XXXXXX</button>
             </div>
+
         </div>
     )
 }
