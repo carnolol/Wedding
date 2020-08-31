@@ -42,13 +42,15 @@ function Login(props) {
             email: email,
             password: password1
         }
-        axios
+        if(email && password1){
+            axios
             .post('/user/login', body)
             .then(res => {
                 console.log(res.data)
                 props.loginUser(res.data)
             })
             .catch(err => alert(err))
+        } 
         props.handleOpen()
     }
 

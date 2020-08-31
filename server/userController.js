@@ -3,11 +3,13 @@ const nodemailer = require('nodemailer')
 require('dotenv').config()
 
 const moabPictures = [
-
+'https://www.planetware.com/photos-large/USUT/utah-moab-things-to-do-delicate-arch-hike.jpg',
+'https://www.discovermoab.com/wp-content/uploads/2017/11/rainbow-arch-through-hole.jpg',
+'https://lh3.googleusercontent.com/proxy/gHmXJxH0zakf65m6k0w3s3t7Ppt5a8n7Yxo5VdvXFuDRymJ41930qqM7HwZJp3KRuNyzAV6_Zua_uOEjH7L6OKqW7lKcoc0Iw7Zgeq4ytDFVqGPvzWw9eOzl'
 ]
 
-const random = Math.floor(Math.random() * moabPictures.length)
-const randomMoabPicture = moabPictures[random]
+const randomIndex = Math.floor(Math.random() * moabPictures.length)
+const randomMoabPicture = moabPictures[randomIndex]
 
 module.exports = {
     login: async (req, res) => {
@@ -30,7 +32,7 @@ module.exports = {
     register: async(req, res) => {
         const db = req.app.get('db')
         const {first_name, last_name, password, email} = req.body
-        const existingUser = await db.check_if_user([first_name, last_name])
+        const existingUser = await db.check_if_user([email])
         if(existingUser[0]){
             return res.status(409).send('Looks like you already have any account, Please Login!')
         }

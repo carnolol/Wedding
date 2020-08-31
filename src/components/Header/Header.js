@@ -65,6 +65,7 @@ function Header(props) {
                 props.logoutUser(res.data)
             })
             .catch(err => alert(err))
+        setMobileMenu(false)
     }
 
     return (
