@@ -12,8 +12,8 @@ const randomMoabPicture = moabPictures[random]
 module.exports = {
     login: async (req, res) => {
         const db = req.app.get('db')
-        const {first_name, last_name, password} = req.body
-        const existingUser = await db.check_if_user([first_name, last_name])
+        const {email, password} = req.body
+        const existingUser = await db.check_if_user([email])
         if(!existingUser[0]){
             return res.status(404).send('Please register before logging in')
         }

@@ -23,7 +23,7 @@ export function loginUser(values){
 export default function reducer(state = initialState, action){
     switch(action.type){
         case LOGIN_USER:
-            return {...state, ...action.payload, isLoggedIn: true}
+            return {...state, user: action.payload, isLoggedIn: true}
         case LOGOUT_USER:
             return {...state, ...action.payload}
         default: 
