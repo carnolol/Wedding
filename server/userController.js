@@ -28,6 +28,7 @@ module.exports = {
         } else {
             res.status(403).send('Username or Password is incorrect')
         }
+        //WORKING
     },
     register: async(req, res) => {
         const db = req.app.get('db')

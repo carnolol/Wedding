@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import './Login.css'
 import family from '../photos/Family.jpg'
-import TextFiend from '@material-ui/core/TextField'
+import TextField from '@material-ui/core/TextField'
 import { connect } from 'react-redux'
 import { loginUser } from '../../ducks/userReducer'
 import swal from 'sweetalert'
@@ -16,6 +16,7 @@ function Login(props) {
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [loggingIn, setLoggingIn] = useState(true)
+    const [errorLoggingIn, setErrorLoggingIn] = useState(false)
     const [email, setEmail] = useState('')
 
     useEffect(() => {
@@ -48,11 +49,24 @@ function Login(props) {
             .then(res => {
                 console.log(res.data)
                 props.loginUser(res.data)
+                props.handleOpen()
             })
-            .catch(err => alert(err))
+            .catch(err => {
+               console.log(err) 
+               setErrorLoggingIn(true)
+               handleReset()
+            })
         } 
-        props.handleOpen()
     }
+
+    const handlePasswordMatchingRegister = () => {
+        if(password1 !== password2){
+            setErrorLoggingIn(true)
+            handleReset()
+        } else if (password1 === password2){
+            handleRegister()
+        }
+    } 
 
     const handleRegister = () => {
         const body = {
@@ -67,7 +81,7 @@ function Login(props) {
                 props.loginUser(res.data)
                 // handleReset()
             })
-            .catch(() => swal(`Looks like you already have an account ${firstName}. Please login`, 'Error', 'error'))
+            .catch(() => swal(`Looks like you already have an account ${firstName}. Please login`, 'Whoops!', 'error'))
         props.handleOpen()
     }
 
@@ -94,19 +108,22 @@ function Login(props) {
                         null
                     ) : (
                             <>
-                                <TextFiend
+                                <TextField
+                                    error={errorLoggingIn}
                                     label='First Name'
                                     value={firstName}
                                     required={true}
                                     onChange={(e) => setFirstName(e.target.value)} />
-                                <TextFiend
+                                <TextField
+                                    error={errorLoggingIn}
                                     label='Last Name'
                                     value={lastName}
                                     required={true}
                                     onChange={(e) => setLastName(e.target.value)} /> </>)}
                 </div>
 
-                <TextFiend
+                <TextField
+                    error={errorLoggingIn}
                     label='Email'
                     value={email}
                     required={true}
@@ -114,7 +131,9 @@ function Login(props) {
 
                 <div className='password-container'>
                     {loggingIn ? (
-                        <TextFiend
+                        <TextField
+                            error={errorLoggingIn}
+                            helperText={errorLoggingIn ? 'Incorrect email or password' : null}
                             label='Password'
                             value={password1}
                             required={true}
@@ -122,13 +141,17 @@ function Login(props) {
                             onChange={(e) => setPassword1(e.target.value)} />
                     ) : (
                             <>
-                                <TextFiend
+                                <TextField
+                                    error={errorLoggingIn}
+                                    helperText={errorLoggingIn ? 'Passwords do not match' : null}
                                     label='Password'
                                     value={password1}
                                     required={true}
                                     type='password'
                                     onChange={(e) => setPassword1(e.target.value)} />
-                                <TextFiend
+                                <TextField
+                                    error={errorLoggingIn}
+                                    helperText={errorLoggingIn ? 'Passwords do not match' : null}
                                     label='Verify Password'
                                     value={password2}
                                     required={true}
@@ -147,7 +170,7 @@ function Login(props) {
                             onClick={(e) => handleLogin(e)}>SIGN IN</button>
                     ) : (
                             <button className='login-button'
-                                onClick={() => handleRegister()}>REGISTER</button>
+                                onClick={() => handlePasswordMatchingRegister()}>REGISTER</button>
                         )}
                 </form>
 
