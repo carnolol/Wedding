@@ -56,10 +56,35 @@ function Login(props) {
                             required={true}
                             onChange={(e) => setLastName(e.target.value)} /> </>)}
                 </div>
+
+                <div className='password-container'>
+                        {loggingIn ? (
+                            <TextFiend
+                                label='Password'
+                                value={password1}
+                                required={true}
+                                onChange={(e) => setPassword1(e.target.value)}/>
+                        ) : (
+                            <>
+                             <TextFiend
+                                label='Password'
+                                value={password1}
+                                required={true}
+                                onChange={(e) => setPassword1(e.target.value)}/>
+                            <TextFiend
+                                label='Verify Password'
+                                value={password2}
+                                required={true}
+                                onChange={(e) => setPassword2(e.target.value)}/>
+                            </>
+                        )}
+                </div>
+
                 <div>
                     <p>Don't have an account? </p>
-                    <h3>REGISTER HERE</h3>
-                </div>          
+                    <h3 onClick={() => setLoggingIn(!loggingIn)}>REGISTER HERE</h3>
+                </div> 
+
             </div> 
 
         </div>
