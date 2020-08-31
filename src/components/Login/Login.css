@@ -16,6 +16,7 @@
     background-color: white;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -45,12 +46,12 @@
 .family-pic-container > h1 {
     position: absolute;
     bottom: -25px;
-    right: 28%;
-    color: black;
-    background-color: #279185;
-    text-shadow: 1px 1px 1px white;
+    right: 19%;
+    color: white;
+    background-color: #2BA193;
+    text-shadow: 2px 2px 4px black;
     padding: 10px;
-    font-size: 170%;
+    font-size: 220%;
     font-family: 'Dancing Script', cursive;
 }
 
@@ -74,4 +75,61 @@
 
 .password-container{
     margin-top: 25px;
+}
+
+.login-buttons-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.login-button{
+    width: 80%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 125%;
+    font-weight: 700;
+    background: #E45C3A;
+}
+
+.login-button:hover{
+    background: #E76A4B;
+    transition: all .15s;
+}
+
+.register-container{
+    cursor: pointer;
+    display: flex;
+    margin-bottom: 15px;
+    width: 90%;
+    font-size: 120%;
+    justify-content: space-between;
+}
+
+
+.register-and-login {
+    padding-bottom: 3px;
+    color: #2BA193;
+}
+
+.register-and-login:hover{
+    padding-bottom: 0;
+    border-bottom: 3px solid #E45C3A;
+}
+
+.register-and-login2{
+    cursor: pointer;
+    color: #2BA193;
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 140%;
+    padding-bottom: 3px;
+}
+
+.register-and-login2:hover{
+    padding-bottom: 0;
+    border-bottom: 3px solid #E45C3A;
 }

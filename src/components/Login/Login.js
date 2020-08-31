@@ -36,7 +36,8 @@ function Login(props) {
         setEmail('')
     }
 
-    const handleLogin = () => {
+    const handleLogin = (e) => {
+        e.preventDefault()
         const body = {
             email: email,
             password: password1
@@ -48,6 +49,7 @@ function Login(props) {
                 props.loginUser(res.data)
             })
             .catch(err => alert(err))
+        props.handleOpen()
     }
 
     const handleRegister = () => {
@@ -62,9 +64,9 @@ function Login(props) {
             .then(res => {
                 props.loginUser(res.data)
                 // handleReset()
-                props.handleOpen()
             })
             .catch(() => swal(`Looks like you already have an account ${firstName}. Please login`, 'Error', 'error'))
+        props.handleOpen()
     }
 
     return (
@@ -134,20 +136,30 @@ function Login(props) {
                         )}
                 </div>
 
-                <form onSubmit={e => handleSubmit(e)}>
+                <form className='login-buttons-container'
+                    onSubmit={e => handleLogin(e)}>
                     {loggingIn ? (
                         <button className='login-button'
-                            onClick={() => handleLogin()}>SIGN IN</button>
+                            type='submit'
+                            onSubmit={(e) => handleLogin(e)}
+                            onClick={(e) => handleLogin(e)}>SIGN IN</button>
                     ) : (
                             <button className='login-button'
                                 onClick={() => handleRegister()}>REGISTER</button>
                         )}
                 </form>
 
-                <div>
-                    <p>Don't have an account? </p>
-                    <h3 onClick={() => setLoggingIn(!loggingIn)}>REGISTER HERE</h3>
-                </div>
+                {loggingIn ? (
+                    <div className='register-container'
+                        onClick={() => setLoggingIn(!loggingIn)}>
+                        <p>Don't have an account? </p>
+                        <h2 className='register-and-login'
+                            onClick={() => setLoggingIn(!loggingIn)}>REGISTER HERE</h2>
+                    </div>
+                ) : (
+                   <h2 className='register-and-login2'
+                    onClick={() => setLoggingIn(!loggingIn)}>Back to Login</h2>
+                )}
 
             </div>
 

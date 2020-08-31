@@ -3,6 +3,7 @@ import axios from 'axios'
 import menu from '../icons/60-hamburger-white copy.png'
 import Login from '../Login/Login'
 import { connect } from 'react-redux'
+import {logoutUser} from '../../ducks/userReducer'
 import {withRouter} from 'react-router-dom'
 
 import './Header.css'
@@ -57,6 +58,15 @@ function Header(props) {
         setMobileMenu(false)
     }
 
+    const handleLogout = () => {
+        axios
+            .delete('/user/logout')
+            .then(res => {
+                props.logoutUser(res.data)
+            })
+            .catch(err => alert(err))
+    }
+
     return (
         <div className='master-header-div'>
 
@@ -74,6 +84,8 @@ function Header(props) {
                         onClick={() => scrollToRSVP()}>RSVP</li>
                     <li className='nav-item'
                         onClick={() => php('/vows')}>Our Vows</li>
+                    <li className='nav-item'
+                        onClick={() => handleOpenLogin()}>Login</li>
                         
                 </ul>
 
@@ -94,6 +106,8 @@ function Header(props) {
                         onClick={() => php('/vows')}>Our Vows</li>
                     <li className='mobile-nav-item'
                         onClick={() => handleOpenLogin()}>Login</li>
+                    <li className='mobile-nav-item'
+                        onClick={() => handleLogout()}>Logout</li>
 
                 </nav>
 
@@ -105,4 +119,4 @@ function Header(props) {
 
 const mapStateToProps = reduxState => reduxState
 
-export default connect(mapStateToProps, {})(withRouter(Header))
+export default connect(mapStateToProps, {logoutUser})(withRouter(Header))
