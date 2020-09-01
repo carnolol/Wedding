@@ -8,6 +8,7 @@ const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env
 const userCtrl = require('./userController')
 const commentCtrl = require('./commentsController')
 const slideShowCtrl = require('./slideshowController')
+const googleCtrl = require('./googleMapsController')
 
 app.use(session({
     resave: false, 
@@ -40,4 +41,7 @@ app.get('/wedding/pictures' , slideShowCtrl.getSlideshowPictures)
 //* COMMENTS ENDPOINTS
 
 app.get('/wedding/comments', commentCtrl.addComment)
+
+//* GOOGLE MAPS LOCATIONS ENDPOINTS
+app.get('/wedding/locations', googleCtrl.getLocations)
 //TODO: add DB file to add comments (work on MVP before doing this, and create Table for comments.)

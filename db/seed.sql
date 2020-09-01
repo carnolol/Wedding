@@ -12,3 +12,13 @@ id serial primary key,
 img text,
 description varchar(400)
 )
+
+create table google_map_locations(
+    id serial primay key, 
+    lat decimal, 
+    lng decimal,
+    name varchar(100),
+    description varchar(250),
+    address varchar(500),
+    image text
+)

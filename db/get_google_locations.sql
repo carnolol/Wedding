@@ -1,0 +1,1 @@
+select * from google_map_locations
