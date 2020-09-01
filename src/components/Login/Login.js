@@ -43,30 +43,30 @@ function Login(props) {
             email: email,
             password: password1
         }
-        if(email && password1){
+        if (email && password1) {
             axios
-            .post('/user/login', body)
-            .then(res => {
-                console.log(res.data)
-                props.loginUser(res.data)
-                props.handleOpen()
-            })
-            .catch(err => {
-               console.log(err) 
-               setErrorLoggingIn(true)
-               handleReset()
-            })
-        } 
+                .post('/user/login', body)
+                .then(res => {
+                    console.log(res.data)
+                    props.loginUser(res.data)
+                    props.handleOpen()
+                })
+                .catch(err => {
+                    console.log(err)
+                    setErrorLoggingIn(true)
+                    handleReset()
+                })
+        }
     }
 
     const handlePasswordMatchingRegister = () => {
-        if(password1 !== password2){
+        if (password1 !== password2) {
             setErrorLoggingIn(true)
             handleReset()
-        } else if (password1 === password2){
+        } else if (password1 === password2) {
             handleRegister()
         }
-    } 
+    }
 
     const handleRegister = () => {
         const body = {
@@ -109,12 +109,14 @@ function Login(props) {
                     ) : (
                             <>
                                 <TextField
+                                    fullWidth
                                     error={errorLoggingIn}
                                     label='First Name'
                                     value={firstName}
                                     required={true}
                                     onChange={(e) => setFirstName(e.target.value)} />
                                 <TextField
+                                    fullWidth
                                     error={errorLoggingIn}
                                     label='Last Name'
                                     value={lastName}
@@ -122,17 +124,21 @@ function Login(props) {
                                     onChange={(e) => setLastName(e.target.value)} /> </>)}
                 </div>
 
-                <TextField
-                    error={errorLoggingIn}
-                    label='Email'
-                    value={email}
-                    required={true}
-                    onChange={e => setEmail(e.target.value)} />
+                <div className='email-input'>
+                    <TextField
+                        fullWidth
+                        error={errorLoggingIn}
+                        label='Email'
+                        value={email}
+                        required={true}
+                        onChange={e => setEmail(e.target.value)} />
+                </div>
 
-                <div className='password-container'>
+                <div className='password-inputs'>
                     {loggingIn ? (
                         <TextField
                             error={errorLoggingIn}
+                            size='large'
                             helperText={errorLoggingIn ? 'Incorrect email or password' : null}
                             label='Password'
                             value={password1}
@@ -182,9 +188,9 @@ function Login(props) {
                             onClick={() => setLoggingIn(!loggingIn)}>REGISTER HERE</h2>
                     </div>
                 ) : (
-                   <h2 className='register-and-login2'
-                    onClick={() => setLoggingIn(!loggingIn)}>Back to Login</h2>
-                )}
+                        <h2 className='register-and-login2'
+                            onClick={() => setLoggingIn(!loggingIn)}>Back to Login</h2>
+                    )}
 
             </div>
 

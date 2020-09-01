@@ -10,12 +10,12 @@ function Slideshow(props){
     const [pictures, setPictures] = useState([])
 
     useEffect(() => {
-        axios
-            .get('/wedding/pictures')
-            .then(res => {
-                setPictures(res.data)
-            })
-            .catch(err => console.log(err))
+        // axios
+        //     .get('/wedding/pictures')
+        //     .then(res => {
+        //         setPictures(res.data)
+        //     })
+        //     .catch(err => console.log(err))
     },[])
 
     let weddingPictures = pictures.map(picture => {
@@ -30,7 +30,8 @@ function Slideshow(props){
     })
 
         return (
-            <div>
+            <div className='master-slideshow-div'>
+                <h1>Slideshow.js</h1>
                 {weddingPictures}
             </div>
         )

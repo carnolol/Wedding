@@ -27,6 +27,7 @@ function Header(props) {
     }
 
     const scrollToTop = () => {
+        php('/')
         window.scrollTo({
             top: 0,
             left: 0,
@@ -36,6 +37,7 @@ function Header(props) {
     }
 
     const scrollToLocations = () => {
+        php('/')
         window.scrollTo({
             top: 1000, 
             left: 0, 
@@ -45,6 +47,7 @@ function Header(props) {
     }
 
     const scrollToRSVP = () => {
+        php('/')
         window.scrollTo({
             top:2000,
             left: 0, 

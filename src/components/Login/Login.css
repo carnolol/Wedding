@@ -11,7 +11,7 @@
 
 .login-form-container{
     position: relative;
-    height: 80%;
+    height: 85%;
     width: 90%;
     background-color: white;
     display: flex;
@@ -65,16 +65,21 @@
 }
 
 .first-and-last-name-inputs{
+    width: 60%;
     margin-top: 30px;
     display: flex;
     flex-direction: column;
-    width: 95%;
     justify-content: space-around;
     align-items: center;
     align-content: center;
 }
 
-.password-container{
+.email-input{
+    width: 60%;
+}
+
+.password-inputs{
+    width: 60%;
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
