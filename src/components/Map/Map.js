@@ -27,7 +27,7 @@ function Map(props) {
 
         return (
             <GoogleMap
-                defaultZoom={10}
+                defaultZoom={9.5}
                 defaultCenter={{ lat: 38.584890, lng: -109.593250 }}>
 
                 {locations.map(location => {
@@ -66,8 +66,8 @@ function Map(props) {
     return (
         <div className='master-map-div'>
 
-            <h1>Map</h1>
-
+            <h1 className='map-h1'>See Where We're staying!</h1>
+            <p>Click on a location to learn more about each event</p>
             <div className='google-map-container'>
                 {locations ? <MapWrapped
                     googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyBR2I3dXefKomnYAtLQqi0uVg8SmHon3w8`}

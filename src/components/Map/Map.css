@@ -1,14 +1,27 @@
 .master-map-div{
-    width: 90vw;
-    height: 450px;
+    width: 100vw;
+    height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: purple;
+    /* background-color: purple; */
+}
+
+.map-h1{
+    font-size: 180%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.master-map-div > p {
+    font-size: 110%;
+    padding-bottom: 20px;
 }
 
 .google-map-container{
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px black;
     height: 90%;
     width: 90%;
 }
