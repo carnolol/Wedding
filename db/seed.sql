@@ -14,7 +14,7 @@ description varchar(400)
 )
 
 create table google_map_locations(
-    id serial primay key, 
+    id serial primary key, 
     lat decimal, 
     lng decimal,
     name varchar(100),

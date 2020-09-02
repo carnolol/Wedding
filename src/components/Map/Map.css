@@ -1,5 +1,5 @@
 .master-map-div{
-    width: 95vw;
+    width: 90vw;
     height: 450px;
     display: flex;
     flex-direction: column;
@@ -10,5 +10,5 @@
 
 .google-map-container{
     height: 90%;
-    width: 100%;
+    width: 90%;
 }
