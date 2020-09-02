@@ -27,8 +27,8 @@ function Map(props) {
 
         return (
             <GoogleMap
-                defaultZoom={10.5}
-                defaultCenter={{ lat: 38.684890, lng: -109.593250 }}>
+                defaultZoom={10}
+                defaultCenter={{ lat: 38.584890, lng: -109.593250 }}>
 
                 {locations.map(location => {
                     return <Marker
@@ -49,6 +49,10 @@ function Map(props) {
                             <p>{selectedLocation.description}</p>
                             <br></br>
                             <p>Address: {selectedLocation.address}</p>
+                            <br></br>
+                            <a href={selectedLocation.href}>
+                                <p>Click to see pictures</p>
+                            </a>
                         </div>
                     </InfoWindow>
                 )}

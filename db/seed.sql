@@ -20,5 +20,6 @@ create table google_map_locations(
     name varchar(100),
     description varchar(250),
     address varchar(500),
-    image text
+    image text,
+    href text,
 )
