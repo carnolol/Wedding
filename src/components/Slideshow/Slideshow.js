@@ -3,6 +3,7 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import axios from 'axios'
+import loveHero from '../photos/mike-claire-love.JPG'
 import './Slideshow.css'
 
 function Slideshow(props){
@@ -31,7 +32,16 @@ function Slideshow(props){
 
         return (
             <div className='master-slideshow-div'>
-                <h1>Michael and Claire</h1>
+
+                <div className='mike-and-claire'>
+
+                    <h1>Celebrating Michael and Claire</h1>
+
+                    {/* <img className='landing-hero'
+                        src={loveHero}
+                        alt='michael and claire in love'/> */}
+                </div>
+
                 {weddingPictures}
             </div>
         )
