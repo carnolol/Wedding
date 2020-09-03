@@ -3,8 +3,24 @@ import './Vows.css'
 
 function Vows(props){
     return(
-        <div>
-            VOWS.JS
+        <div className='master-vow-div'>
+
+            <h1>Our Vows</h1>
+
+            <div className='vows-container'>
+
+                <div>
+                	<h1>Michael's vows to Claire</h1>
+                    <p>Michaels vows are still being written!</p>
+                </div>
+
+                <div>
+                    <h1>Claire's vows to Michael</h1>
+                    <p>Claire's vows are still being written!</p>
+                </div>
+
+            </div>
+
         </div>
     )
 }

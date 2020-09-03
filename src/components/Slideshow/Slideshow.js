@@ -31,7 +31,7 @@ function Slideshow(props){
 
         return (
             <div className='master-slideshow-div'>
-                <h1>Slideshow.js</h1>
+                <h1>Michael and Claire</h1>
                 {weddingPictures}
             </div>
         )

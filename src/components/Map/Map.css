@@ -20,8 +20,8 @@
 }
 
 .google-map-container{
-    border-radius: 5px;
+    border-radius: 3px;
     box-shadow: 2px 2px 5px black;
     height: 90%;
-    width: 90%;
+    width: 92%;
 }
