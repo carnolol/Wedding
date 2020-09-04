@@ -1,6 +1,6 @@
 .master-slideshow-div {
     width: 100vw;
-    height: 600px;
+    /* height: 600px; */
     background-color: cornflowerblue;
     display: flex;
     flex-direction: column;
@@ -12,7 +12,7 @@
 /* @import '../photos/mike-claire-love.JPG'; */
 
 .mike-and-claire {
-    height: 70%;
+    height: 450px;
     width: 100vw;
     position: relative;
     display: flex;
@@ -20,9 +20,10 @@
     align-items: center;
     background-image: url(../photos//mike-claire-love.JPG);
     background-position: left -100px center;
+    background-repeat: no-repeat;
 }
 
-.mike-and-claire > h1 {
+.slideshow-h1 {
     font-family: 'Dancing Script', cursive;
     color:black;
     font-size: 170%;
@@ -32,8 +33,24 @@
 }
 
 .slider-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid crimson;
+    /* height: 400px; */
+    /* width: 350px; */
+    width: 90%;
+}
+
+.wedding-picture{
+    
+    border: 2px solid chartreuse;
+    object-fit: contain;
     height: 450px;
+    /* height: 100%; */
     width: 350px;
+    /* height: 100%;
+    width: 100%; */
 }
 /* 
 .landing-hero{
