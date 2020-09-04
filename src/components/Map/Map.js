@@ -66,8 +66,8 @@ function Map(props) {
     return (
         <div className='master-map-div'>
 
-            <h1 className='map-h1'>See Where We're staying!</h1>
-            <p>Click on a location to learn more about each event</p>
+            <h1 className='map-h1'>See where we're staying!</h1>
+            <p>Click on a location to learn more about each place!</p>
             <div className='google-map-container'>
                 {locations ? <MapWrapped
                     googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyBR2I3dXefKomnYAtLQqi0uVg8SmHon3w8`}

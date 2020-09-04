@@ -54,6 +54,7 @@
 
 .mobile-nav-list-closed{
     position: absolute;
+    z-index: 14;
     top: 45px;
     right: 0;
     height: 0;
@@ -65,7 +66,8 @@
     justify-content: space-evenly;
     transition: all .25s ease-in-out;
     overflow-y: hidden;
-    background-image: linear-gradient(to left top, #e9c46a, #ebb663, #eda85e, #ed9a5b, #ec8c5b, #ec8c5b, #ec8c5b, #ec8c5b, #ed9a5b, #eda85e, #ebb663, #e9c46a);
+    background-color: rgb(255, 255, 255, .9);
+    /* background-image: linear-gradient(to left top, #e9c46a, #ebb663, #eda85e, #ed9a5b, #ec8c5b, #ec8c5b, #ec8c5b, #ec8c5b, #ed9a5b, #eda85e, #ebb663, #e9c46a); */
 }
 
 .mobile-nav-list-open{

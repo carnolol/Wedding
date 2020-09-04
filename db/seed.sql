@@ -10,8 +10,12 @@ email varchar(250)
 create table slideshow_pictures(
 id serial primary key, 
 img text,
-description varchar(400)
+description varchar(400),
+chadwick_slides oid,
+chaadwick_pictures bytea
 )
+
+-- trying to import files into database from my local machine.... thats what the oid & bytea datatypes are
 
 create table google_map_locations(
     id serial primary key, 
