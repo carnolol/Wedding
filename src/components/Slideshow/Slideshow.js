@@ -48,11 +48,11 @@ function Slideshow(props) {
 
     let weddingPictures = pictures.map(picture => {
         return (
-            <div>
+            <div className='wedding-picture-container'>
                 <img className='wedding-picture'
                     alt='Mike and Claire'
                     src={picture.img} />
-                <p>{picture.id - 11}/150</p>
+                <p>{picture.id - 11}/{pictures.length}</p>
             </div>
 
         )

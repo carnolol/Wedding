@@ -110,6 +110,7 @@ function Header(props) {
                         onClick={() => php('/vows')}>Our Vows</li>
                     <li className='mobile-nav-item'
                         onClick={() => handleOpenLogin()}>Login</li>
+                    <li className='mobile-nav-item'>Registry</li>
                     <li className='mobile-nav-item'
                         onClick={() => handleLogout()}>Logout</li>
 

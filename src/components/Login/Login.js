@@ -3,6 +3,9 @@ import axios from 'axios'
 import './Login.css'
 import family from '../photos/Family.jpg'
 import TextField from '@material-ui/core/TextField'
+import { ThemeProvider } from '@material-ui/styles'
+import teal from '@material-ui/core/colors/teal'
+import { createMuiTheme } from '@material-ui/core/styles'
 import { connect } from 'react-redux'
 import { loginUser } from '../../ducks/userReducer'
 import swal from 'sweetalert'
@@ -28,6 +31,14 @@ function Login(props) {
         e.preventDefault()
         handleReset()
     }
+
+    const theme = createMuiTheme({
+        palette: {
+            primary: {
+                main: teal[600]
+            },
+        }
+    })
 
     const handleReset = () => {
         setPassword1('')
@@ -115,23 +126,27 @@ function Login(props) {
                                     value={firstName}
                                     required={true}
                                     onChange={(e) => setFirstName(e.target.value)} />
-                                <TextField
-                                    fullWidth
-                                    error={errorLoggingIn}
-                                    label='Last Name'
-                                    value={lastName}
-                                    required={true}
-                                    onChange={(e) => setLastName(e.target.value)} /> </>)}
+                                <ThemeProvider theme={theme}>
+                                    <TextField
+                                        fullWidth
+                                        error={errorLoggingIn}
+                                        label='Last Name'
+                                        value={lastName}
+                                        required={true}
+                                        onChange={(e) => setLastName(e.target.value)} />
+                                </ThemeProvider> </>)}
                 </div>
 
                 <div className='email-input'>
-                    <TextField
-                        fullWidth
-                        error={errorLoggingIn}
-                        label='Email'
-                        value={email}
-                        required={true}
-                        onChange={e => setEmail(e.target.value)} />
+                    <ThemeProvider theme={theme}>
+                        <TextField
+                            fullWidth
+                            error={errorLoggingIn}
+                            label='Email'
+                            value={email}
+                            required={true}
+                            onChange={e => setEmail(e.target.value)} />
+                    </ThemeProvider>
                 </div>
 
                 <div className='password-inputs'>

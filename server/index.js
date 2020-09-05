@@ -9,6 +9,7 @@ const userCtrl = require('./userController')
 const commentCtrl = require('./commentsController')
 const slideShowCtrl = require('./slideshowController')
 const googleCtrl = require('./googleMapsController')
+const mailCtrl = require('./mailController')
 
 app.use(session({
     resave: false, 
@@ -33,6 +34,10 @@ app.get('/user/me', userCtrl.getLoggedInUser)
 app.post('/user/login', userCtrl.login)
 app.post('/user/register', userCtrl.register)
 app.delete('/user/logout', userCtrl.logout)
+
+//* Nodemailer
+app.post('/wedding/rsvp', mailCtrl.sendRSVP)
+app.post('/wedding/message', mailCtrl.sendMessageToBrideAndGroom)
 
 //* SLIDESHOW ENDPOINTS
 

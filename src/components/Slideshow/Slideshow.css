@@ -50,6 +50,20 @@
     width: 90%;
 }
 
+.weddingpicture-container{
+    position: relative;
+}
+
+.wedding-picture-container > p {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    color: white;
+    padding: 10px;
+    font-weight: 700;
+    background: rgb(0, 0, 0, .7);
+}
+
 .wedding-picture{
 
     /* border: 2px solid chartreuse; */
