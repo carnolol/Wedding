@@ -27,14 +27,14 @@ function Map(props) {
 
         return (
             <GoogleMap
-                defaultZoom={9.5}
-                defaultCenter={{ lat: 38.584890, lng: -109.593250 }}>
+                defaultZoom={9.9}
+                defaultCenter={{ lat: 38.684890, lng: -109.593250 }}>
 
                 {locations.map(location => {
                     return <Marker
                         key={location.id}
                         position={{ lat: +location.lat, lng: +location.lng }}
-                        icon={{ url: location.image, scaledSize: new window.google.maps.Size(30, 30) }}
+                        icon={{ url: location.image, scaledSize: new window.google.maps.Size(35, 35) }}
                         onClick={() => setSelectedLocation(location)} />
 
                 })}
@@ -51,7 +51,7 @@ function Map(props) {
                             <p>Address: {selectedLocation.address}</p>
                             <br></br>
                             <a href={selectedLocation.href}>
-                                <p>Click to see pictures</p>
+                                <p>Click to see pictures of location</p>
                             </a>
                         </div>
                     </InfoWindow>
