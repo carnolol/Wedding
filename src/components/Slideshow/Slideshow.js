@@ -19,24 +19,25 @@ function Slideshow(props) {
                 setPictures(res.data)
             })
             .catch(err => console.log(err))
-    }, [speedOfCarousel && stopCarousel])
+    }, [stopCarousel])
 
-        // dots: true,
-        // infinite: true,
-        // autoplaySpeed: 4300,
-        // fade: true,
-        // autoplay: true,
-        // speed: 3000,
-        // slidesToShow: 1,
-        // slidesToScroll: 1,
-        // arrows: true,
+    // dots: true,
+    // infinite: true,
+    // autoplaySpeed: 4300,
+    // fade: true,
+    // autoplay: true,
+    // speed: 3000,
+    // slidesToShow: 1,
+    // slidesToScroll: 1,
+    // arrows: true,
 
     const settings = {
-        fade: true, 
+        fade: true,
+        lazyLoad: true, 
         autoplay: stopCarousel,
         autoplaySpeed: speedOfCarousel,
         // autoplaySpeed is the setting of how long the picture stays visible
-        // arrows: true,
+        arrows: true,
         infinite: true,
         swipeToSlide: true,
         speed: speedOfCarousel,
@@ -47,17 +48,33 @@ function Slideshow(props) {
 
     let weddingPictures = pictures.map(picture => {
         return (
+            <div>
                 <img className='wedding-picture'
                     alt='Mike and Claire'
                     src={picture.img} />
+                <p>{picture.id - 11}/150</p>
+            </div>
+
         )
     })
+
+//    const pause = () => {
+//         slider.slickPause();
+//       }
+
+    const handleSpeedIncrease = () => {
+        if(speedOfCarousel <= 1000){
+           return setSpeedOCarousel(500)
+        } else {
+            return setSpeedOCarousel(speedOfCarousel -= 750)
+        }
+    }
 
     return (
         <div className='master-slideshow-div'>
 
             <div className='mike-and-claire'>
-                
+
                 <h1 className='slideshow-h1'>Celebrating Michael and Claire</h1>
                 <h1 className='slideshow-h1'>A love 7 years in the making</h1>
                 {/* <h1 className='slideshow-h1'>10-24-2020</h1> */}
@@ -67,7 +84,7 @@ function Slideshow(props) {
             <h1 className='slider-h1'>From the beginning of our love till now!</h1>
 
             <div className='slider-container'>
-                <Slider {...settings} style={{width: '90%'}}>
+                <Slider ref={slider => (slider = slider)} {...settings} style={{ width: '90%' }}>
                     {weddingPictures}
                 </Slider>
             </div>
@@ -75,10 +92,11 @@ function Slideshow(props) {
 
                 <button className='slider-buttons'
                     onClick={() => setSpeedOCarousel(speedOfCarousel += 750)}>Slow Down</button>
+                {/* <button onClick={() => pause()}>Pause</button> */}
+                {/* <button className='slider-buttons'
+                    onClick={() => setStopCarousel(!stopCarousel)}>Stop & Go</button> */}
                 <button className='slider-buttons'
-                    onClick={() => setStopCarousel(!stopCarousel)}>Stop & Go</button>
-                <button className='slider-buttons'
-                    onClick={() => setSpeedOCarousel( speedOfCarousel -= 750)}>Speed up</button>
+                    onClick={() => handleSpeedIncrease()}>Speed up</button>
 
             </div>
         </div>
