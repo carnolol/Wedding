@@ -6,14 +6,32 @@
     width: 100vw;
 }
 
+.rsvp-h1{
+    font-size: 160%;
+    margin-top: 25px;
+}
+
 .RSVP-container{
+    border-radius: 5px;
+    margin-top: 25px;
+    margin-bottom: 15px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    background: chartreuse;
+    /* background: chartreuse; */
     width: 90%;
+    height: 700px;
     box-shadow: 2px 2px 4px black;
+}
+
+.menu-container{
+    display: flex;
+    background: crimson;
+}
+
+.lodging-select{
+    padding: 15px;
 }
 
 .ui-inputs{

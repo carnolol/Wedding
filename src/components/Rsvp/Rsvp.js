@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import orange from '@material-ui/core/colors/orange'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
+import Menu from '@material-ui/core/Menu'
+import MenuItem from '@material-ui/core/MenuItem'
 import { ThemeProvider } from '@material-ui/styles';
 import { createMuiTheme } from '@material-ui/core/styles'
 import swal from 'sweetalert'
@@ -13,7 +15,7 @@ function Rsvp(props) {
 
     const [message, setMessage] = useState('')
     const [numberOfGuests, setNumberOfGuests] = useState(0)
-    const [requiresLodging, setRequiresLodging] = useState('')
+    const [requiresLodging, setRequiresLodging] = useState('Yes')
 
     const theme = createMuiTheme({
         palette: {
@@ -55,7 +57,7 @@ function Rsvp(props) {
         const body = {
 
         }
-        if(message){
+        if (message) {
             //axios post req here
         }
     }
@@ -66,6 +68,7 @@ function Rsvp(props) {
         setRequiresLodging('')
     }
 
+
     return (
         <div className='master-rsvp-div'>
 
@@ -73,11 +76,28 @@ function Rsvp(props) {
 
             <div className='RSVP-container'>
 
-                <p>Please be sure to check your spam folder for the RSVP E-mail!</p>
+                <div className='menu-container'>
+                    <p>Do you want to stay with us at the Airbnb?</p>
+                    {/* <Menu id='simple-menu'
+                        anchorEl={requiresLodging}
+                        keepMounted
+                        open={true}>
+                        <MenuItem>Yes</MenuItem>
+                        <MenuItem>No</MenuItem>
+                    </Menu> */}
+                    <select className='lodging-select'
+                        value={requiresLodging} 
+                        onChange={e => setRequiresLodging(e.target.value)}>
+                            <option value='Yes'>Yes</option>
+                            <option value='No'>No</option>
+                    </select>
+                </div>
+
+                <h2>Have a question? Or just want to chat? Message us!</h2>
 
                 <ThemeProvider theme={theme}>
                     <TextField
-                        label='Send a message to the Bride & Groom'
+                        label='Message to the Bride & Groom'
                         variant='outlined'
                         color="primary"
                         multiline={true}
@@ -86,10 +106,13 @@ function Rsvp(props) {
                         className='ui-inputs'
                         onChange={e => setMessage(e.target.value)} />
                 </ThemeProvider>
+
                 <div className='rsvp-btn-container'>
-                   <button className='rsvp-btns'
-                    onClick={() => handleSendMessage()}>Submit</button>
+                    <button className='rsvp-btns'
+                        onClick={() => handleSendMessage()}>Send Message</button>
                 </div>
+
+                    <p>Please be sure to check your spam folder for the RSVP E-mail!</p>
             </div>
 
         </div>
