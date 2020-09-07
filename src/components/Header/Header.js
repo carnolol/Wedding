@@ -5,6 +5,13 @@ import Login from '../Login/Login'
 import { connect } from 'react-redux'
 import { logoutUser } from '../../ducks/userReducer'
 import { withRouter } from 'react-router-dom'
+import Home from '../icons/icons8-home-50-white copy.png'
+import gift from '../icons/icons8-gift-50.png'
+import loginIcon from '../icons/icons8-login-rounded-64-white copy.png'
+import powerDown from '../icons/icons8-shutdown-64-white.png'
+import ring from '../icons/icons8-diamond-ring-64.png'
+import brideAndGroom from '../icons/icons8-wedding-50 copy.png'
+import rsvpIcon from '../icons/icons8-message-exchange-50 copy.png'
 
 import './Header.css'
 
@@ -103,21 +110,57 @@ function Header(props) {
                     <div className='mobile-nav-item-container'>
                         <img className='nav-item-icon'
                             alt='Home Icon'
-                            src={}/>
+                            src={Home} />
                         <li className='mobile-nav-item'
                             onClick={() => scrollToTop()}>Home</li>
                     </div>
-                    <li className='mobile-nav-item'
-                        onClick={() => scrollToTop()}>Venue Locations</li>
-                    <li className='mobile-nav-item'
-                        onClick={() => scrollToTop()}>RSVP</li>
-                    <li className='mobile-nav-item'
-                        onClick={() => php('/vows')}>Our Vows</li>
-                    <li className='mobile-nav-item'
-                        onClick={() => handleOpenLogin()}>Login</li>
-                    <li className='mobile-nav-item'>Registry</li>
-                    <li className='mobile-nav-item'
-                        onClick={() => handleLogout()}>Logout</li>
+
+                    <div className='mobile-nav-item-container'>
+                        <img className='nav-item-icon'
+                            alt='bride and Groom Icon'
+                            src={brideAndGroom} />
+                        <li className='mobile-nav-item'
+                            onClick={() => scrollToTop()}>Venue Locations</li>
+                    </div>
+
+                    <div className='mobile-nav-item-container'>
+                        <img className='nav-item-icon'
+                            alt='RSVP Icon'
+                            src={rsvpIcon} />
+                        <li className='mobile-nav-item'
+                            onClick={() => scrollToTop()}>RSVP</li>
+                    </div>
+
+                    <div className='mobile-nav-item-container'>
+                        <img className='nav-item-icon'
+                            alt='Rings Icon'
+                            src={ring} />
+                        <li className='mobile-nav-item'
+                            onClick={() => php('/vows')}>Our Vows</li>
+                    </div>
+
+                    <div className='mobile-nav-item-container'>
+                        <img className='nav-item-icon'
+                            alt='Login Icon'
+                            src={loginIcon} />
+                        <li className='mobile-nav-item'
+                            onClick={() => handleOpenLogin()}>Login</li>
+                    </div>
+
+                    <div className='mobile-nav-item-container'>
+                        <img className='nav-item-icon'
+                            alt='Bride & Groom Icon'
+                            src={gift} />
+                        <li className='mobile-nav-item'>Registry</li>
+                    </div>
+
+                    <div className='mobile-nav-item-container'>
+                        <img className='nav-item-icon'
+                            alt='Logout Icon'
+                            src={powerDown} />
+                        <li className='mobile-nav-item'
+                            onClick={() => handleLogout()}>Logout</li>
+                    </div>
 
                 </nav>
 
