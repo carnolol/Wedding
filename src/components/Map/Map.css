@@ -1,6 +1,6 @@
 .master-map-div{
     width: 100vw;
-    height: 850px;
+    height: 950px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -35,11 +35,21 @@
 }
 
 .airbnb-header-container > h1{
-    font-size: 210%;
+    font-size: 260%;
+    color: forestgreen;
+    /* text-shadow: 1px 1px 0px black; */
 }
 
 .airbnb-subcontainer{
+    margin-top: 10px;
+    font-size: 130%;
     display: flex;
+}
+
+.airbnb-subcontainer > h2 {
+    color: #E45C3A;
+    /* font-size: 110%; */
+    /* border-bottom: 1px solid black; */
 }
 
 .airbnb-image-container{

@@ -96,7 +96,7 @@ function Map(props) {
                     <h2>
                         Address:
                     </h2>
-                    <p>168 E Mt Peale Dr, Moab, UT 84532</p>
+                    <p> 168 E Mt Peale Dr, Moab, UT 84532</p>
                 </div>
             </div>
 
