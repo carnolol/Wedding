@@ -11,7 +11,7 @@ import './Rsvp.css'
 function Rsvp(props) {
 
     const [message, setMessage] = useState('')
-    const [numberOfGuests, setNumberOfGuests] = useState(0)
+    const [numberOfGuests, setNumberOfGuests] = useState(null)
     const [requiresLodging, setRequiresLodging] = useState('Yes')
 
     const theme = createMuiTheme({
@@ -80,6 +80,17 @@ function Rsvp(props) {
                         onChange={e => setRequiresLodging(e.target.value)}>
                             <option value='Yes'>Yes</option>
                             <option value='No'>No</option>
+                    </select>
+                </div>
+
+                <div>
+                    <p>How many guests are coming with you?</p>
+                    <select className='lodging-select'
+                        value={numberOfGuests}
+                        onChange={e => setNumberOfGuests(+e.target.value)}>
+                        <option value={1}>1</option>
+                        <option value={2}>2</option>
+                        <option value={3}>3</option>
                     </select>
                 </div>
 
