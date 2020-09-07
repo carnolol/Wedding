@@ -15,6 +15,11 @@ chadwick_slides oid,
 chaadwick_pictures bytea
 )
 
+create table airbnb_pictures(
+    id serial primary key, 
+    img text
+)
+
 -- trying to import files into database from my local machine.... thats what the oid & bytea datatypes are
 
 create table google_map_locations(

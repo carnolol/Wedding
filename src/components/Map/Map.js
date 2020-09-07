@@ -13,12 +13,18 @@ function Map(props) {
     const [selectedLocation, setSelectedLocation] = useState(null)
     const [longitude, setLongitude] = useState(-109.5810)
     const [latitude, setLatitude] = useState(38.7642)
+    const [airbnb, setAirbnb] = useState([])
 
     useEffect(() => {
         axios
             .get('/wedding/locations')
             .then(res => {
                 setLocations(res.data)
+                axios
+                    .get('/wedding/airbnb')
+                    .then(res => {
+                        setAirbnb(res.data)
+                    })
             })
             .catch(err => console.log(err))
     }, [])
@@ -63,6 +69,14 @@ function Map(props) {
 
     const MapWrapped = withScriptjs(withGoogleMap(MyMap))
 
+    const airbnbPictures = airbnb.map(picture => {
+        return(
+                <img className='airbnb-picture'
+                    alt={`air bnb picture #${picture.id} is broken`}
+                    src={picture.img}/>
+        )
+    }) 
+
     return (
         <div className='master-map-div'>
 
@@ -75,6 +89,20 @@ function Map(props) {
                     containerElement={<div style={{ height: '100%' }} />}
                     mapElement={<div style={{ height: '100%' }} />} /> : null}
             </div>
+
+            <div className='airbnb-header-container'>
+                <h1>Airbnb</h1>
+                <div className='airbnb-subcontainer'>
+                    <h2>
+                        Address:
+                    </h2>
+                    <p>168 E Mt Peale Dr, Moab, UT 84532</p>
+                </div>
+            </div>
+
+            <div className='airbnb-image-container'>     
+                {airbnbPictures}     
+            </div>       
 
         </div>
     )

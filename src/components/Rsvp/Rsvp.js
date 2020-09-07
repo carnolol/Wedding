@@ -3,9 +3,6 @@ import axios from 'axios'
 import { connect } from 'react-redux'
 import orange from '@material-ui/core/colors/orange'
 import TextField from '@material-ui/core/TextField'
-import Button from '@material-ui/core/Button'
-import Menu from '@material-ui/core/Menu'
-import MenuItem from '@material-ui/core/MenuItem'
 import { ThemeProvider } from '@material-ui/styles';
 import { createMuiTheme } from '@material-ui/core/styles'
 import swal from 'sweetalert'
@@ -78,13 +75,6 @@ function Rsvp(props) {
 
                 <div className='menu-container'>
                     <p>Do you want to stay with us at the Airbnb?</p>
-                    {/* <Menu id='simple-menu'
-                        anchorEl={requiresLodging}
-                        keepMounted
-                        open={true}>
-                        <MenuItem>Yes</MenuItem>
-                        <MenuItem>No</MenuItem>
-                    </Menu> */}
                     <select className='lodging-select'
                         value={requiresLodging} 
                         onChange={e => setRequiresLodging(e.target.value)}>

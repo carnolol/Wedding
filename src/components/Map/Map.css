@@ -1,6 +1,6 @@
 .master-map-div{
     width: 100vw;
-    height: 500px;
+    height: 850px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,6 +22,51 @@
 .google-map-container{
     border-radius: 3px;
     box-shadow: 2px 2px 5px black;
-    height: 90%;
+    height: 450px;
     width: 92%;
+}
+
+.airbnb-header-container{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.airbnb-header-container > h1{
+    font-size: 210%;
+}
+
+.airbnb-subcontainer{
+    display: flex;
+}
+
+.airbnb-image-container{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    overflow-x: scroll;
+    /* overflow-y: auto; */
+    width: 100vw;
+    height: 200px;
+    object-fit: cover;
+    /* background-color: cyan; */
+}
+
+/* .airbnb-container:nth-child(odd){
+    background-color: red;
+} */
+
+.airbnb-picture{
+    margin-left: 5px;
+    height: 190px;
+    width: 250px;
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0, .7);
+}
+
+.airbnb-picture:nth-child(1){
+    margin-left: 0px;
 }

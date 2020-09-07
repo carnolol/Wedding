@@ -42,6 +42,7 @@ app.post('/wedding/message', mailCtrl.sendMessageToBrideAndGroom)
 //* SLIDESHOW ENDPOINTS
 
 app.get('/wedding/pictures' , slideShowCtrl.getSlideshowPictures)
+app.get('/wedding/airbnb', slideShowCtrl.getAirbnbPictures)
 
 //* COMMENTS ENDPOINTS
 
