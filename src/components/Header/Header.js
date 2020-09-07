@@ -3,15 +3,15 @@ import axios from 'axios'
 import menu from '../icons/60-hamburger-white copy.png'
 import Login from '../Login/Login'
 import { connect } from 'react-redux'
-import {logoutUser} from '../../ducks/userReducer'
-import {withRouter} from 'react-router-dom'
+import { logoutUser } from '../../ducks/userReducer'
+import { withRouter } from 'react-router-dom'
 
 import './Header.css'
 
 function Header(props) {
 
     const [mobileMenu, setMobileMenu] = useState(false)
-    const [home , setHome] = useState(true)
+    const [home, setHome] = useState(true)
     const [login, setLogin] = useState(false)
     const [locations, setLocations] = useState(false)
     const [RSVP, setRSVP] = useState(false)
@@ -39,8 +39,8 @@ function Header(props) {
     const scrollToLocations = () => {
         php('/')
         window.scrollTo({
-            top: 1000, 
-            left: 0, 
+            top: 1000,
+            left: 0,
             behavior: 'smooth'
         })
         setMobileMenu(false)
@@ -49,14 +49,14 @@ function Header(props) {
     const scrollToRSVP = () => {
         php('/')
         window.scrollTo({
-            top:2000,
-            left: 0, 
+            top: 2000,
+            left: 0,
             behavior: 'smooth'
         })
         setMobileMenu(false)
     }
 
-    const handleOpenLogin = () =>{
+    const handleOpenLogin = () => {
         setLogin(!login)
         setMobileMenu(false)
     }
@@ -90,18 +90,23 @@ function Header(props) {
                         onClick={() => php('/vows')}>Our Vows</li>
                     <li className='nav-item'
                         onClick={() => handleOpenLogin()}>Login</li>
-                        
+
                 </ul>
 
                 <img className='hamburger'
                     alt='menu icon'
                     src={menu}
-                    onClick={() => setMobileMenu(!mobileMenu)}/>
+                    onClick={() => setMobileMenu(!mobileMenu)} />
 
                 <nav className={`mobile-nav-list-closed ${mobileMenu ? `mobile-nav-list-open` : null}`}>
 
-                    <li className='mobile-nav-item'
-                        onClick={() => scrollToTop()}>Home</li>
+                    <div className='mobile-nav-item-container'>
+                        <img className='nav-item-icon'
+                            alt='Home Icon'
+                            src={}/>
+                        <li className='mobile-nav-item'
+                            onClick={() => scrollToTop()}>Home</li>
+                    </div>
                     <li className='mobile-nav-item'
                         onClick={() => scrollToTop()}>Venue Locations</li>
                     <li className='mobile-nav-item'
@@ -117,11 +122,11 @@ function Header(props) {
                 </nav>
 
             </nav>
-            {login ? <Login open={login} handleOpen={handleOpenLogin}/> : null}
+            {login ? <Login open={login} handleOpen={handleOpenLogin} /> : null}
         </div>
     )
 }
 
 const mapStateToProps = reduxState => reduxState
 
-export default connect(mapStateToProps, {logoutUser})(withRouter(Header))
+export default connect(mapStateToProps, { logoutUser })(withRouter(Header))
