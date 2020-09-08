@@ -1,10 +1,55 @@
-.master-footer-div{
+.master-footer-div {
     display: flex;
     bottom: 0;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    height: 60px;
+    height: 100px;
     width: 100vw;
     background-color: #2BA193;
+}
+
+.master-footer-div >h1 {
+    font-size: 140%;
+    text-shadow: 1px 1px 2px black;
+    color: white;
+}
+
+.holds-all-icons {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    justify-content: space-evenly;
+}
+
+.footer-icons-container {
+    padding: 3px;
+    display: flex;
+    background-color: #E76A4B;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer-icons-container:hover{
+    cursor: pointer;
+    transition: all .35s ease-in-out;
+    background-color: #EAC871;
+}
+
+.footer-icons {
+    height: 30px;
+    width: 30px;
+}
+
+.footer-icons-container > p {
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    font-size: 80%;
+}
+
+.master-footer-div > p{
+    font-size: 60%;
+    color: white;
+    text-shadow: .5px .5px 1px black;
 }

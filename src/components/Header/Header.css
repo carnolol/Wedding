@@ -3,6 +3,8 @@
     width: 100vw;
     background-color: #E45C3A;
     display: flex;
+    position: fixed;
+    z-index: 4;
     align-items: center;
     position: relative;
     justify-content: space-between;
@@ -81,10 +83,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    transition: all .25s ease-in-out;
+    transition: all .35s ease-in-out;
     overflow-y: hidden;
-    background-color: rgba(0, 0, 0, 0.6);
-    /* background-image: linear-gradient(to left top, #e9c46a, #ebb663, #eda85e, #ed9a5b, #ec8c5b, #ec8c5b, #ec8c5b, #ec8c5b, #ed9a5b, #eda85e, #ebb663, #e9c46a); */
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .mobile-nav-list-open{

@@ -91,12 +91,12 @@ function Slideshow(props) {
             <div className='slider-btn-container'>
 
                 <button className='slider-buttons'
-                    onClick={() => setSpeedOCarousel(speedOfCarousel += 750)}>Slow Down</button>
+                    onClick={() => setSpeedOCarousel(speedOfCarousel += 750)}>-</button>
                 {/* <button onClick={() => pause()}>Pause</button> */}
                 {/* <button className='slider-buttons'
                     onClick={() => setStopCarousel(!stopCarousel)}>Stop & Go</button> */}
                 <button className='slider-buttons'
-                    onClick={() => handleSpeedIncrease()}>Speed up</button>
+                    onClick={() => handleSpeedIncrease()}>+</button>
 
             </div>
         </div>

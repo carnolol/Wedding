@@ -83,7 +83,7 @@ function Rsvp(props) {
                     </select>
                 </div>
 
-                <div>
+                <div className='menu-container'>
                     <p>How many guests are coming with you?</p>
                     <select className='lodging-select'
                         value={numberOfGuests}
@@ -93,6 +93,11 @@ function Rsvp(props) {
                         <option value={3}>3</option>
                     </select>
                 </div>
+
+                <button className='rsvp-btns'
+                    onClick={() => sendRsvpEmail()}>
+                   RSVP
+                </button>
 
                 <h2>Have a question? Or just want to chat? Message us!</h2>
 
