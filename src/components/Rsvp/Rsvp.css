@@ -65,3 +65,19 @@
     font-weight: 700;
     background: #E45C3A;
 }
+
+.registry-container{
+    box-shadow: 2px 2px 4px black;
+}
+
+.registry-logo-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* width: 80%; */
+    background: chocolate;
+}
+
+.registry-logo{
+    height: 60px;
+}

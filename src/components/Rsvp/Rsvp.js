@@ -8,6 +8,11 @@ import { createMuiTheme } from '@material-ui/core/styles'
 import swal from 'sweetalert'
 import './Rsvp.css'
 
+
+const target = 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Target_Corporation_logo_%28vector%29.svg/300px-Target_Corporation_logo_%28vector%29.svg.png'
+
+const amazon = 'https://merivis.org/wp-content/uploads/2018/02/Amazon-Logo-Transparent-PNG-300x300.png'
+
 function Rsvp(props) {
 
     const [message, setMessage] = useState('')
@@ -76,10 +81,10 @@ function Rsvp(props) {
                 <div className='menu-container'>
                     <p>Do you want to stay with us at the Airbnb?</p>
                     <select className='lodging-select'
-                        value={requiresLodging} 
+                        value={requiresLodging}
                         onChange={e => setRequiresLodging(e.target.value)}>
-                            <option value='Yes'>Yes</option>
-                            <option value='No'>No</option>
+                        <option value='Yes'>Yes</option>
+                        <option value='No'>No</option>
                     </select>
                 </div>
 
@@ -96,7 +101,7 @@ function Rsvp(props) {
 
                 <button className='rsvp-btns'
                     onClick={() => sendRsvpEmail()}>
-                   RSVP
+                    RSVP
                 </button>
 
                 <h2>Have a question? Or just want to chat? Message us!</h2>
@@ -118,7 +123,27 @@ function Rsvp(props) {
                         onClick={() => handleSendMessage()}>Send Message</button>
                 </div>
 
-                    <p>Please be sure to check your spam folder for the RSVP E-mail!</p>
+                <p>Please be sure to check your spam folder for the RSVP E-mail!</p>
+            </div>
+
+            <div className='registry-container'>
+
+                <h1>The bride and groom are registered at Target and Amazon</h1>
+
+                <div className='registry-logo-container'>
+                    <a href=''>
+                        <img className='registry-logo'
+                            src={target}
+                            alt='target logo' />
+                    </a>
+                    
+                    <a href='https://www.amazon.com/wedding/organize-registry?ref_=wedding_subnav'>
+                        <img className='registry-logo'
+                            src={amazon}
+                            alt='amazon logo'/>
+                    </a>
+                </div>
+
             </div>
 
         </div>
