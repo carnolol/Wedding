@@ -1,4 +1,4 @@
-.master-rsvp-div{
+.master-rsvp-div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,13 +6,17 @@
     width: 100vw;
 }
 
-.rsvp-h1{
+.rsvp-h1 {
     font-size: 160%;
     margin-top: -15px;
+    margin-bottom: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-bottom: 3px solid #008024;
 }
 
-.RSVP-container{
-    border-radius: 5px;
+.RSVP-container {
+    /* border-radius: 5px; */
     margin-top: 25px;
     margin-bottom: 15px;
     display: flex;
@@ -20,44 +24,45 @@
     justify-content: space-evenly;
     align-items: center;
     /* background: chartreuse; */
-    width: 96%;
+    width: 94%;
     height: 700px;
-    box-shadow: 2px 2px 4px black;
+    box-shadow: 0px 2px 4px 0px black;
 }
 
-.menu-container{
+.menu-container {
     display: flex;
-    width: 90%;
+    width: 80%;
     justify-content: space-between;
     align-items: center;
-    border: 2px solid forestgreen;
 }
 
-.menu-container > p {
-    font-size: 120%;
-    /* text-shadow: 1px 1px 2px black; */
+.menu-container>p {
+    font-size: 130%;
+    width: 60%;
+
 }
 
-.lodging-select{
-    /* height: 100%; */
+.lodging-select {
+    height: 100%;
     padding: 5px;
+
 }
 
-.ui-inputs{
+.ui-inputs {
     width: 80%;
 }
 
-.rsvp-btn-container{
+.rsvp-btn-container {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
 }
 
-.rsvp-btns{
-    width: 28%;
+.rsvp-btns {
+    width: 80%;
     /* padding: 15px; */
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border: none;
     cursor: pointer;
     color: white;
@@ -66,18 +71,40 @@
     background: #E45C3A;
 }
 
-.registry-container{
-    box-shadow: 2px 2px 4px black;
+.rsvp-h2 {
+    font-size: 130%;
+    width: 80%;
 }
 
-.registry-logo-container{
+.registry-container {
+    height: 120px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    /* width: 80%; */
-    background: chocolate;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    width: 90%;
+    /* box-shadow: 0px 2px 3px 0px black; */
 }
 
-.registry-logo{
+.registry-container>h1 {
+    font-size: 140%;
+    margin-bottom: 15px;
+}
+
+.registry-logo-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.RSVP-container > p{
+    width: 80%;
+    font-size: 120%;
+}
+
+.registry-logo {
     height: 60px;
 }

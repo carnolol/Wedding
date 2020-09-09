@@ -15,6 +15,8 @@ import rsvpIcon from '../icons/icons8-message-exchange-50 copy.png'
 
 import './Header.css'
 
+const arch = 'https://www.myiconstory.com/wp-content/uploads/2018/07/Moab-The-Delicate-Arch-.png'
+
 function Header(props) {
 
     const [mobileMenu, setMobileMenu] = useState(false)
@@ -78,10 +80,20 @@ function Header(props) {
         setMobileMenu(false)
     }
 
+    const handleGoToVows = () => {
+        php('/vows')
+        setMobileMenu(false)
+    }
+
     return (
         <div className='master-header-div'>
 
-            <h1 onClick={() => php('/')}>The Chadwick's</h1>
+            <div className='arches-container'>
+                <img className='arches-img'
+                    alt='arches img'
+                    src={arch}/>
+                <h1 onClick={() => php('/')}>The Chadwick's</h1>
+            </div>
 
             <nav className='navbar'>
 
@@ -136,7 +148,7 @@ function Header(props) {
                             alt='Rings Icon'
                             src={ring} />
                         <li className='mobile-nav-item'
-                            onClick={() => php('/vows')}>Our Vows</li>
+                            onClick={() => handleGoToVows()}>Our Vows</li>
                     </div>
 
                     <div className='mobile-nav-item-container'>

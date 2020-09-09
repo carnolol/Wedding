@@ -46,7 +46,7 @@ function Rsvp(props) {
             handleReset()
         } else {
             swal({
-                title: 'Error',
+                title: 'Please Login',
                 text: 'Your must login before you can RSVP.',
                 icon: 'error',
                 button: 'OK'
@@ -104,7 +104,7 @@ function Rsvp(props) {
                     RSVP
                 </button>
 
-                <h2>Have a question? Or just want to chat? Message us!</h2>
+                <h2 className='rsvp-h2'>Have a question? Or just want to chat? Message us!</h2>
 
                 <ThemeProvider theme={theme}>
                     <TextField
@@ -128,15 +128,15 @@ function Rsvp(props) {
 
             <div className='registry-container'>
 
-                <h1>The bride and groom are registered at Target and Amazon</h1>
+                <h1>We are registered at Target and Amazon.</h1>
 
                 <div className='registry-logo-container'>
-                    <a href=''>
+                    <a href='https://www.target.com/gift-registry/giftgiver?registryId=88d9bb4897f543d197d2b31e53f268cc&type=WEDDING'>
                         <img className='registry-logo'
                             src={target}
                             alt='target logo' />
                     </a>
-                    
+
                     <a href='https://www.amazon.com/wedding/organize-registry?ref_=wedding_subnav'>
                         <img className='registry-logo'
                             src={amazon}
