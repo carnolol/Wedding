@@ -4,9 +4,14 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 100px;
+    height: 230px;
     width: 100vw;
     background-color: #2BA193;
+}
+
+#about-me-text{
+    width: 85%;
+    font-size: 80%;
 }
 
 .master-footer-div >h1 {

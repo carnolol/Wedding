@@ -11,6 +11,8 @@ function Footer(props) {
 
             <h1>We Did it! We finally got married.</h1>
 
+            <p id='about-me-text'> For anyone who doesn't know, I (Mike) have made a major career change over the last year and have decided to become a programmer! I have fallen in love with being able to make web applications and learning new things each day. To celebrate our love we decided to make a website to show our friends and family our love from the beginning. Thank you for being there for us.</p>
+
             <div className='holds-all-icons'>
 
                 <div className='footer-icons-container'>

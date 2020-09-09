@@ -33,7 +33,7 @@ function Slideshow(props) {
 
     const settings = {
         fade: true,
-        lazyLoad: true, 
+        lazyLoad: true,
         autoplay: stopCarousel,
         autoplaySpeed: speedOfCarousel,
         // autoplaySpeed is the setting of how long the picture stays visible
@@ -58,13 +58,13 @@ function Slideshow(props) {
         )
     })
 
-//    const pause = () => {
-//         slider.slickPause();
-//       }
+    //    const pause = () => {
+    //         slider.slickPause();
+    //       }
 
     const handleSpeedIncrease = () => {
-        if(speedOfCarousel <= 1000){
-           return setSpeedOCarousel(500)
+        if (speedOfCarousel <= 1000) {
+            return setSpeedOCarousel(500)
         } else {
             return setSpeedOCarousel(speedOfCarousel -= 750)
         }
@@ -75,8 +75,10 @@ function Slideshow(props) {
 
             <div className='mike-and-claire'>
 
-                <h1 className='slideshow-h1'>Celebrating Michael and Claire</h1>
-                <h1 className='slideshow-h1'>A love 7 years in the making</h1>
+                <div className='slideshow-h1-container'>
+                    <h1 className='slideshow-h1'>Celebrating Michael and Claire</h1>
+                    <h1 className='slideshow-h1'>A love 7 years in the making</h1>
+                </div>
                 {/* <h1 className='slideshow-h1'>10-24-2020</h1> */}
 
             </div>
