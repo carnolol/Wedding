@@ -97,7 +97,7 @@
     justify-content: space-between;
     transition: all .35s ease-in-out;
     overflow-y: hidden;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, .6);
 }
 
 .mobile-nav-list-open{

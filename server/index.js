@@ -11,6 +11,8 @@ const slideShowCtrl = require('./slideshowController')
 const googleCtrl = require('./googleMapsController')
 const mailCtrl = require('./mailController')
 
+const path = require('path')
+
 app.use(session({
     resave: false, 
     saveUninitialized: true,
@@ -51,3 +53,8 @@ app.get('/wedding/comments', commentCtrl.addComment)
 //* GOOGLE MAPS LOCATIONS ENDPOINTS
 app.get('/wedding/locations', googleCtrl.getLocations)
 //TODO: add DB file to add comments (work on MVP before doing this, and create Table for comments.)
+
+app.use(express.static(__dirname + '/../build'))
+app.get('*', (req,res) => {
+    res.sendFile(path.join(__dirname, '../build/index.html'))
+})

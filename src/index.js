@@ -5,16 +5,16 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import store from './ducks/store'
 import { Provider } from 'react-redux'
-import { HashRouter } from 'react-router-dom'
-// const Router = process.end.NODE_ENV === 'development' ? HashRouter : BrowserRouter
+import { HashRouter, BrowserRouter } from 'react-router-dom'
+const Router = process.env.NODE_ENV === 'development' ? HashRouter : BrowserRouter
 
 ReactDOM.render(
   <Provider store={store}>
-    <HashRouter>
+    <Router>
       <React.StrictMode>
         <App />
       </React.StrictMode>
-    </HashRouter>
+    </Router>
   </Provider>,
   document.getElementById('root')
 );
