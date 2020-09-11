@@ -32,7 +32,9 @@ function Header(props) {
     const php = props.history.push
 
     const handleAnimations = () => {
-        //TODO: built out scrolling logic here when sizes of components is finished.
+        if(window.scrollY > 0){
+            
+        }
     }
 
     const scrollToTop = () => {
