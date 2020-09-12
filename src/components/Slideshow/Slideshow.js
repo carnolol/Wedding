@@ -10,7 +10,7 @@ function Slideshow(props) {
 
     const [pictures, setPictures] = useState([])
     let [stopCarousel, setStopCarousel] = useState(true)
-    let [speedOfCarousel, setSpeedOCarousel] = useState(2500)
+    let [speedOfCarousel, setSpeedOCarousel] = useState(1750)
 
     useEffect(() => {
         axios
@@ -19,7 +19,7 @@ function Slideshow(props) {
                 setPictures(res.data)
             })
             .catch(err => console.log(err))
-    }, [stopCarousel])
+    }, [])
 
     // dots: true,
     // infinite: true,
@@ -33,11 +33,10 @@ function Slideshow(props) {
 
     const settings = {
         fade: true,
-        lazyLoad: true,
         autoplay: stopCarousel,
         autoplaySpeed: speedOfCarousel,
         // autoplaySpeed is the setting of how long the picture stays visible
-        arrows: true,
+        // arrows: true,
         infinite: true,
         swipeToSlide: true,
         speed: speedOfCarousel,
@@ -59,7 +58,7 @@ function Slideshow(props) {
     })
 
     //    const pause = () => {
-    //         slider.slickPause();
+    //         Slider.slickPause();
     //       }
 
     const handleSpeedIncrease = () => {
@@ -93,12 +92,14 @@ function Slideshow(props) {
             <div className='slider-btn-container'>
 
                 <button className='slider-buttons'
-                    onClick={() => setSpeedOCarousel(speedOfCarousel += 750)}>-</button>
-                {/* <button onClick={() => pause()}>Pause</button> */}
+                    onClick={() => setSpeedOCarousel(speedOfCarousel += 750)}>Slow Down</button>
                 {/* <button className='slider-buttons'
-                    onClick={() => setStopCarousel(!stopCarousel)}>Stop & Go</button> */}
+                    onClick={() => Slider.slickPause()}>Pause</button> */}
+                    
                 <button className='slider-buttons'
-                    onClick={() => handleSpeedIncrease()}>+</button>
+                    onClick={() => setStopCarousel(!stopCarousel)}>{stopCarousel ? 'Playing' : 'Paused'}</button>
+                <button className='slider-buttons'
+                    onClick={() => handleSpeedIncrease()}>Speed Up</button>
 
             </div>
         </div>
