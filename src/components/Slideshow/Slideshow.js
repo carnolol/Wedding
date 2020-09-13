@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css"
 import axios from 'axios'
 import loveHero from '../photos/mike-claire-love.JPG'
 import './Slideshow.css'
+import pause from 'react-slick/lib/slider'
 
 function Slideshow(props) {
 
@@ -19,7 +20,7 @@ function Slideshow(props) {
                 setPictures(res.data)
             })
             .catch(err => console.log(err))
-    }, [])
+    }, [stopCarousel, speedOfCarousel])
 
     // dots: true,
     // infinite: true,
@@ -36,9 +37,9 @@ function Slideshow(props) {
         autoplay: stopCarousel,
         autoplaySpeed: speedOfCarousel,
         // autoplaySpeed is the setting of how long the picture stays visible
-        // arrows: true,
+        arrows: false,
         infinite: true,
-        swipeToSlide: true,
+        // swipeToSlide: true,
         speed: speedOfCarousel,
         // speed is the setting of how long it takes to transition or fade between each picture
         slidesToShow: 1,
@@ -63,7 +64,7 @@ function Slideshow(props) {
 
     const handleSpeedIncrease = () => {
         if (speedOfCarousel <= 1000) {
-            return setSpeedOCarousel(500)
+            return setSpeedOCarousel(800)
         } else {
             return setSpeedOCarousel(speedOfCarousel -= 750)
         }
@@ -85,7 +86,7 @@ function Slideshow(props) {
             <h1 className='slider-h1'>From the beginning of our love till now!</h1>
 
             <div className='slider-container'>
-                <Slider ref={slider => (slider = slider)} {...settings} style={{ width: '90%' }}>
+                <Slider {...settings} style={{ width: '90%' }}>
                     {weddingPictures}
                 </Slider>
             </div>
@@ -93,11 +94,12 @@ function Slideshow(props) {
 
                 <button className='slider-buttons'
                     onClick={() => setSpeedOCarousel(speedOfCarousel += 750)}>Slow Down</button>
+
                 {/* <button className='slider-buttons'
-                    onClick={() => Slider.slickPause()}>Pause</button> */}
+                    onClick={() => this.slider.slickPause()}>Pause</button> */}
                     
-                <button className='slider-buttons'
-                    onClick={() => setStopCarousel(!stopCarousel)}>{stopCarousel ? 'Playing' : 'Paused'}</button>
+                {/* <button className='slider-buttons'
+                    onClick={() => setStopCarousel(!stopCarousel)}>{stopCarousel ? 'Pause' : 'Play'}</button> */}
                 <button className='slider-buttons'
                     onClick={() => handleSpeedIncrease()}>Speed Up</button>
 

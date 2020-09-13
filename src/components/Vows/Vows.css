@@ -9,7 +9,18 @@
 
 .vows-container{
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     width: 95%;
     height: 300px;
     background-color: #EAC871;
+}
+
+.vows{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 45%;
+    height: 89%;
+    background-color: white;
 }

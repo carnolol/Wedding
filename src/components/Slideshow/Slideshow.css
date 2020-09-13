@@ -2,7 +2,6 @@
     margin-top: 34px;
     width: 100vw;
     /* height: 600px; */
-    background-color: #D6D6D6;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,11 +44,11 @@
 
 .slider-h1{
     font-family: 'Dancing Script', cursive;
-    font-size: 150%;
+    font-size: 155%;
     font-weight: 700;
-    text-shadow: 2px 2px 5px white;
-    color: #008024;
-    border-bottom: 2px solid white;
+
+    color: black;
+    border-bottom: 2px solid #E45C3A;
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -57,15 +56,19 @@
 .slider-container{
     display: flex;
     justify-content: center;
-    align-items: center;
     /* border: 2px solid crimson; */
     /* height: 400px; */
     /* width: 350px; */
-    width: 90%;
+    width: 95%;
 }
 
 .weddingpicture-container{
-    position: relative;
+    width: 350px;
+    height: 400px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; */
 }
 
 .wedding-picture-container > p {
@@ -82,9 +85,9 @@
 
     /* border: 2px solid chartreuse; */
     object-fit: contain;
-    height: 400px;
+    height: 425px;
     /* height: 100%; */
-    width: 350px;
+    width: 375px;
     /* height: 100%;
     width: 100%; */
 }
