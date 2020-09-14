@@ -15,8 +15,10 @@ const amazon = 'https://merivis.org/wp-content/uploads/2018/02/Amazon-Logo-Trans
 
 function Rsvp(props) {
 
+    console.log('REDUX USER:', props.user)
+
     const [message, setMessage] = useState('')
-    const [numberOfGuests, setNumberOfGuests] = useState(null)
+    const [numberOfGuests, setNumberOfGuests] = useState(0)
     const [requiresLodging, setRequiresLodging] = useState('Yes')
 
     const theme = createMuiTheme({
@@ -29,27 +31,27 @@ function Rsvp(props) {
 
     const sendRsvpEmail = () => {
         const body = {
-            first_name: props.first_name,
-            last_name: props.last_name,
-            email: props.email,
+            first_name: props.user.first_name,
+            last_name: props.user.last_name,
+            email: props.user.email,
             numberOfGuests: numberOfGuests,
             requiresLodging: requiresLodging
         }
-        if (props.last_name) {
+        if (props.isLoggedIn) {
+            axios.post('/wedding/rsvp', body)
             swal({
                 title: 'Success!',
                 text: `Thank you for RSVPing to Mike & Claire's wedding!`,
                 icon: 'success',
                 button: 'Close'
             })
-            axios.post('/wedding/rsvp', body)
             handleReset()
         } else {
             swal({
                 title: 'Please Login',
-                text: 'Your must login before you can RSVP.',
+                text: 'You must login before you can RSVP.',
                 icon: 'error',
-                button: 'OK'
+                buttons: ['OK', 'Login']
             })
             handleReset()
         }
@@ -57,10 +59,27 @@ function Rsvp(props) {
 
     const handleSendMessage = () => {
         const body = {
-
+            first_name: props.user.first_name,
+            last_name: props.user.last_name,
+            message: message
         }
-        if (message) {
-            //axios post req here
+        if (props.isLoggedIn) {
+            axios.post('/wedding/message', body)
+            swal({
+                title: 'Message Sent!',
+                text: `Thank you for sending us a message! We will get back to you soon!`,
+                icon: 'success',
+                button: 'Close'
+            })
+            handleReset()
+        } else{
+            swal({
+                title: 'Please Login',
+                text: 'You must login before you can RSVP.',
+                icon: 'error',
+                buttons: ['OK', 'Login']
+            })
+            handleReset()
         }
     }
 
@@ -93,6 +112,7 @@ function Rsvp(props) {
                     <select className='lodging-select'
                         value={numberOfGuests}
                         onChange={e => setNumberOfGuests(+e.target.value)}>
+                        <option value={0}>0</option>
                         <option value={1}>1</option>
                         <option value={2}>2</option>
                         <option value={3}>3</option>

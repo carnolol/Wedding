@@ -12,7 +12,7 @@ let transporter = nodemailer.createTransport({
 module.exports = {
     sendRSVP: async (req, res) => {
         const {first_name, last_name, email, numberOfGuests, requiresLodging} = req.body
-
+        console.log('rsvp', req.body)
         let mailList = [
             'michael.chadwick91@gmail.com',
             'iprice22isright@gmail.com'
