@@ -51,7 +51,7 @@ function Rsvp(props) {
                 title: 'Please Login',
                 text: 'You must login before you can RSVP.',
                 icon: 'error',
-                buttons: ['OK', 'Login']
+                buttons: ['OK']
             })
             handleReset()
         }
@@ -77,7 +77,7 @@ function Rsvp(props) {
                 title: 'Please Login',
                 text: 'You must login before you can RSVP.',
                 icon: 'error',
-                buttons: ['OK', 'Login']
+                buttons: ['OK']
             })
             handleReset()
         }

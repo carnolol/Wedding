@@ -12,11 +12,14 @@
 
 .arches-container{
     display: flex;
+    justify-content: space-between;
     align-items: center;
     height: 100%;
+    width: 48%;
 }
 
 .arches-img{
+    /* border: 1px solid white; */
     padding-bottom: 6px;
     height: 45px;
     width: 45px;
@@ -28,6 +31,13 @@
     font-family: 'Dancing Script', cursive;
     font-weight: 550;
     text-shadow: 2px 2px 2px black;
+}
+
+.profile-pic{
+    height: 35px;
+    width: 35px;
+    border-right: 1px solid white;
+    background-color: teal;
 }
 
 .navbar{

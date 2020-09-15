@@ -12,12 +12,15 @@ import powerDown from '../icons/icons8-shutdown-64-white.png'
 import ring from '../icons/icons8-diamond-ring-64.png'
 import brideAndGroom from '../icons/icons8-wedding-50 copy.png'
 import rsvpIcon from '../icons/icons8-message-exchange-50 copy.png'
+import profileIcon from '../icons/icons8-user-60 copy.png'
 
 import './Header.css'
 
 const arch = 'https://www.myiconstory.com/wp-content/uploads/2018/07/Moab-The-Delicate-Arch-.png'
 
+
 function Header(props) {
+    const php = props.history.push
 
     const [mobileMenu, setMobileMenu] = useState(false)
     const [home, setHome] = useState(true)
@@ -27,13 +30,18 @@ function Header(props) {
 
     useEffect(() => {
         window.addEventListener('scroll', handleAnimations)
+        axios
+            .get('/user/me')
+            .then(res => {
+                props.loginUser(res.data)
+            })
+            .catch(err => console.log(err))
     }, [])
 
-    const php = props.history.push
 
     const handleAnimations = () => {
-        if(window.scrollY > 0){
-            
+        if (window.scrollY > 0) {
+
         }
     }
 
@@ -87,14 +95,27 @@ function Header(props) {
         setMobileMenu(false)
     }
 
+    const notLoggedIn = (
+        <img className='arches-img'
+            alt='arches logo'
+            src={arch}
+        />)
+
+    const isNowLoggedIn = (
+        <img className='profile-pic'
+            alt='users profile picture'
+            src={props.user.profile_pic}/>
+    )
+
     return (
         <div className='master-header-div'>
 
             <div className='arches-container'>
-                <img className='arches-img'
-                    alt='arches img'
-                    src={arch}/>
+                {props.isLoggedIn ? isNowLoggedIn : notLoggedIn}
                 <h1 onClick={() => php('/')}>The Chadwick's</h1>
+                {/* <img className='profile-pic-img'
+                    alt='profile picture'
+                    src={props.user.profile_pic}/> */}
             </div>
 
             <nav className='navbar'>

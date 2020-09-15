@@ -5,7 +5,7 @@ require('dotenv').config()
 const moabPictures = [
 'https://www.planetware.com/photos-large/USUT/utah-moab-things-to-do-delicate-arch-hike.jpg',
 'https://www.discovermoab.com/wp-content/uploads/2017/11/rainbow-arch-through-hole.jpg',
-'https://lh3.googleusercontent.com/proxy/gHmXJxH0zakf65m6k0w3s3t7Ppt5a8n7Yxo5VdvXFuDRymJ41930qqM7HwZJp3KRuNyzAV6_Zua_uOEjH7L6OKqW7lKcoc0Iw7Zgeq4ytDFVqGPvzWw9eOzl'
+'https://miro.medium.com/max/8064/1*aiSVY3AuiDpnH-Z-upixnQ.jpeg'
 ]
 
 const randomIndex = Math.floor(Math.random() * moabPictures.length)

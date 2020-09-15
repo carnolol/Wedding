@@ -22,10 +22,6 @@ function Login(props) {
     const [errorLoggingIn, setErrorLoggingIn] = useState(false)
     const [email, setEmail] = useState('')
 
-    useEffect(() => {
-
-    }, [])
-    //TODO: Need to add input boxes using material UI, need to update redux correctly with users info.
 
     const handleSubmit = e => {
         e.preventDefault()
