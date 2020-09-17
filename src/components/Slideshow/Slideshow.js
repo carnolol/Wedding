@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css"
 import axios from 'axios'
 import loveHero from '../photos/mike-claire-love.JPG'
 import './Slideshow.css'
-import pause from 'react-slick/lib/slider'
+import slickPause from 'react-slick/lib/slider'
 
 function Slideshow(props) {
 
@@ -41,6 +41,7 @@ function Slideshow(props) {
         infinite: true,
         // swipeToSlide: true,
         speed: speedOfCarousel,
+        pauseOnHover: true,
         // speed is the setting of how long it takes to transition or fade between each picture
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -58,9 +59,14 @@ function Slideshow(props) {
         )
     })
 
-    //    const pause = () => {
-    //         Slider.slickPause();
-    //       }
+    // this.play = this.play.bind(this);
+    // this.pause = this.pause.bind(this);
+    // function play() {
+    //     this.slider.slickPlay();
+    // }
+    // function pause() {
+    //     Slider.slickPause();
+    // }
 
     const handleSpeedIncrease = () => {
         if (speedOfCarousel <= 1000) {
@@ -86,7 +92,7 @@ function Slideshow(props) {
             <h1 className='slider-h1'>From the beginning of our love till now!</h1>
 
             <div className='slider-container'>
-                <Slider {...settings} style={{ width: '90%' }}>
+                <Slider  {...settings} style={{ width: '90%' }}>
                     {weddingPictures}
                 </Slider>
             </div>
@@ -96,8 +102,8 @@ function Slideshow(props) {
                     onClick={() => setSpeedOCarousel(speedOfCarousel += 750)}>Slow Down</button>
 
                 {/* <button className='slider-buttons'
-                    onClick={() => this.slider.slickPause()}>Pause</button> */}
-                    
+                    onClick={() => pause()}>Pause</button> */}
+
                 {/* <button className='slider-buttons'
                     onClick={() => setStopCarousel(!stopCarousel)}>{stopCarousel ? 'Pause' : 'Play'}</button> */}
                 <button className='slider-buttons'

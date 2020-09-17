@@ -30,6 +30,7 @@ function Header(props) {
 
     useEffect(() => {
         window.addEventListener('scroll', handleAnimations)
+        window.scrollTo(0, 0)
         axios
             .get('/user/me')
             .then(res => {
@@ -58,7 +59,7 @@ function Header(props) {
     const scrollToLocations = () => {
         php('/')
         window.scrollTo({
-            top: 1000,
+            top: 1050,
             left: 0,
             behavior: 'smooth'
         })
@@ -68,7 +69,17 @@ function Header(props) {
     const scrollToRSVP = () => {
         php('/')
         window.scrollTo({
-            top: 2000,
+            top: 1940,
+            left: 0,
+            behavior: 'smooth'
+        })
+        setMobileMenu(false)
+    }
+
+    const scrollToRegistry = () => {
+        php('/')
+        window.scrollTo({
+            top: 3500,
             left: 0,
             behavior: 'smooth'
         })
@@ -155,7 +166,7 @@ function Header(props) {
                             alt='bride and Groom Icon'
                             src={brideAndGroom} />
                         <li className='mobile-nav-item'
-                            onClick={() => scrollToTop()}>Venue Locations</li>
+                            onClick={() => scrollToLocations()}>Venue Locations</li>
                     </div>
 
                     <div className='mobile-nav-item-container'>
@@ -163,7 +174,7 @@ function Header(props) {
                             alt='RSVP Icon'
                             src={rsvpIcon} />
                         <li className='mobile-nav-item'
-                            onClick={() => scrollToTop()}>RSVP</li>
+                            onClick={() => scrollToRSVP()}>RSVP</li>
                     </div>
 
                     <div className='mobile-nav-item-container'>
@@ -176,17 +187,18 @@ function Header(props) {
 
                     <div className='mobile-nav-item-container'>
                         <img className='nav-item-icon'
-                            alt='Login Icon'
-                            src={loginIcon} />
+                            alt='Bride & Groom Icon'
+                            src={gift} />
                         <li className='mobile-nav-item'
-                            onClick={() => handleOpenLogin()}>Login</li>
+                            onClick={() => scrollToRegistry()}>Registry</li>
                     </div>
 
                     <div className='mobile-nav-item-container'>
                         <img className='nav-item-icon'
-                            alt='Bride & Groom Icon'
-                            src={gift} />
-                        <li className='mobile-nav-item'>Registry</li>
+                            alt='Login Icon'
+                            src={loginIcon} />
+                        <li className='mobile-nav-item'
+                            onClick={() => handleOpenLogin()}>Login</li>
                     </div>
 
                     <div className='mobile-nav-item-container'>
