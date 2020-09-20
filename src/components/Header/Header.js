@@ -140,7 +140,7 @@ function Header(props) {
                     <li className={`nav-item ${RSVP ? 'current-nav-location' : null}`}
                         onClick={() => scrollToRSVP()}>RSVP</li>
                     <li className='nav-item'
-                        onClick={() => php('/vows')}>Our Vows</li>
+                        onClick={() => handleGoToVows()}>Our Vows</li>
                     <li className='nav-item'
                         onClick={() => handleOpenLogin()}>Login</li>
 
