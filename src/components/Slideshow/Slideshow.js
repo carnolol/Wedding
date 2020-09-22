@@ -39,8 +39,9 @@ function Slideshow(props) {
         // autoplaySpeed is the setting of how long the picture stays visible
         arrows: false,
         infinite: true,
-        // swipeToSlide: true,
+        swipeToSlide: true,
         speed: speedOfCarousel,
+        lazyLoad: true,
         pauseOnHover: true,
         // speed is the setting of how long it takes to transition or fade between each picture
         slidesToShow: 1,
