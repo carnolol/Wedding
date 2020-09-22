@@ -16,7 +16,8 @@ function Footer(props) {
             <div className='holds-all-icons'>
 
                 <div className='footer-icons-container'>
-                    <a href="https://www.linkedin.com/in/michael-chadwick91/">
+                    <a target='_blank'
+                        href="https://www.linkedin.com/in/michael-chadwick91/">
                         <img className='footer-icons'
                             src={linkedIn}
                             alt='LinkedIn Logo' />
@@ -25,7 +26,8 @@ function Footer(props) {
                 </div>
 
                 <div className='footer-icons-container'>
-                    <a href="https://github.com/carnolol">
+                    <a target='_blank'
+                        href="https://github.com/carnolol">
                         <img className='footer-icons'
                             src={gitHub}
                             alt='LinkedIn Logo' />
@@ -34,7 +36,8 @@ function Footer(props) {
                 </div>
 
                 <div className='footer-icons-container'>
-                    <a href="https://docs.google.com/document/d/1f1iLoo4w-FYPjHv3juua0zw-kgrwySCR8vZvpxsxu2U/edit?usp=sharing">
+                    <a target='_blank'
+                        href="https://docs.google.com/document/d/1f1iLoo4w-FYPjHv3juua0zw-kgrwySCR8vZvpxsxu2U/edit?usp=sharing">
                         <img className='footer-icons'
                             src={resume}
                             alt='LinkedIn Logo' />

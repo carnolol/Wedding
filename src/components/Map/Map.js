@@ -56,7 +56,8 @@ function Map(props) {
                             <br></br>
                             <p>Address: {selectedLocation.address}</p>
                             <br></br>
-                            <a href={selectedLocation.href}>
+                            <a target='_blank'
+                                href={selectedLocation.href}>
                                 <p>Click to see pictures of location</p>
                             </a>
                         </div>

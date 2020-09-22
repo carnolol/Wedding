@@ -1,10 +1,28 @@
 .master-vow-div{
+    margin-top: 35px;
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+}
+
+.vow-hero{
+    background-image: url(https://i.pinimg.com/originals/23/d2/cd/23d2cd76ca50b0607383414c4e770817.jpg);
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 750px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.vow-hero > h1 {
+    margin-top: 35px;
+    color: white;
+    font-size: 250%;
+    text-shadow: 1px 1px 2px black;
 }
 
 .vows-container{

@@ -5,7 +5,9 @@ function Vows(props){
     return(
         <div className='master-vow-div'>
 
-            <h1>Our Vows</h1>
+            <div className='vow-hero'>
+                <h1>Our Vows</h1>
+            </div>
 
             <div className='vows-container'>
 

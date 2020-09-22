@@ -151,13 +151,15 @@ function Rsvp(props) {
                 <h1>We are registered at Target and Amazon.</h1>
 
                 <div className='registry-logo-container'>
-                    <a href='https://www.target.com/gift-registry/giftgiver?registryId=88d9bb4897f543d197d2b31e53f268cc&type=WEDDING'>
+                    <a target='_blank'
+                        href='https://www.target.com/gift-registry/giftgiver?registryId=88d9bb4897f543d197d2b31e53f268cc&type=WEDDING' >
                         <img className='registry-logo'
                             src={target}
                             alt='target logo' />
                     </a>
 
-                    <a href='https://www.amazon.com/wedding/organize-registry?ref_=wedding_subnav'>
+                    <a target='_blank'
+                        href='https://www.amazon.com/wedding/organize-registry?ref_=wedding_subnav'>
                         <img className='registry-logo'
                             src={amazon}
                             alt='amazon logo'/>
